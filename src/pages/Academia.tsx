@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { content } from "@/content/content";
+import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Calendar, User, Clock, Download, X } from "lucide-react";
 
 const Academia = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
@@ -112,7 +114,8 @@ const Academia = () => {
           {filteredArticles.map((article) => (
             <Card
               key={article.id}
-              className="glass glass-hover rounded-2xl p-6 border-0 space-y-4 flex flex-col"
+              onClick={() => navigate(`/academia/${article.id}`)}
+              className="glass glass-hover rounded-2xl p-6 border-0 space-y-4 flex flex-col cursor-pointer"
             >
               <div className="flex-grow space-y-4">
                 <h3 className="text-2xl font-bold text-foreground hover:text-primary transition-colors cursor-pointer">
