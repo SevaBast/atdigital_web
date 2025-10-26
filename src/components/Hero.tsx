@@ -26,11 +26,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="animate-fade-in space-y-8">
-          {/* Logo/Title */}
+          {/* Logo */}
           <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-glow">
-              {content.hero.title}
-            </h1>
+            <img 
+              src="/atd_logo.png" 
+              alt="AT Digital Logo" 
+              className="mx-auto w-full max-w-3xl h-auto"
+            />
             <p className="text-xl md:text-2xl text-primary font-medium">
               {content.hero.subtitle}
             </p>
