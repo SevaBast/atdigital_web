@@ -1,6 +1,8 @@
 import { content } from "@/content/content";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
+import Prism from "@/components/Prism";
+import { prismConfig } from "@/config/prismConfig";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -15,12 +17,25 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background-elevated to-background">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[120px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse delay-1000" />
-        </div>
+      {/* Prism Animated Background */}
+      <div className="absolute inset-0">
+        <Prism
+          animationType={prismConfig.animationType}
+          timeScale={prismConfig.timeScale}
+          height={prismConfig.height}
+          baseWidth={prismConfig.baseWidth}
+          scale={prismConfig.scale}
+          hueShift={prismConfig.hueShift}
+          colorFrequency={prismConfig.colorFrequency}
+          noise={prismConfig.noise}
+          glow={prismConfig.glow}
+          bloom={prismConfig.bloom}
+          transparent={prismConfig.transparent}
+          suspendWhenOffscreen={prismConfig.suspendWhenOffscreen}
+          offset={prismConfig.offset}
+          hoverStrength={prismConfig.hoverStrength}
+          inertia={prismConfig.inertia}
+        />
       </div>
 
       {/* Content */}
