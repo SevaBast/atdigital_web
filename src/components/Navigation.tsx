@@ -27,8 +27,8 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-        isScrolled ? "w-[95%] max-w-7xl" : "w-[90%] max-w-6xl"
+      className={`fixed top-7 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+        isScrolled ? "w-[90%] max-w-7xl" : "md:w-[50%] w-[90%] max-w-6xl"
       }`}
     >
       <div
@@ -39,9 +39,14 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent"
+            className="flex items-center"
           >
-            {content.navigation.logo}
+            <img 
+              src="/atd_logo_mini.png" 
+              alt="AT Digital" 
+              className="h-8 w-auto"
+              style={{ filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6))' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -80,13 +85,13 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-border/30 space-y-4 animate-fade-in">
+          <div className="md:hidden mt-4 pt-4 border-t border-border/30 space-y-4">
             {content.navigation.links.map((link) =>
               link.href.startsWith("#") ? (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="block w-full text-left text-foreground/80 hover:text-foreground transition-colors duration-200"
+                  className="block w-full text-left text-foreground/80 hover:text-foreground transition-colors duration-200 py-2"
                 >
                   {link.name}
                 </button>
@@ -95,7 +100,7 @@ const Navigation = () => {
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-foreground/80 hover:text-foreground transition-colors duration-200"
+                  className="block text-foreground/80 hover:text-foreground transition-colors duration-200 py-2"
                 >
                   {link.name}
                 </Link>

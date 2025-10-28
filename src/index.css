@@ -74,6 +74,20 @@ All colors MUST be HSL.
     transform: translateY(-2px);
     box-shadow: 0 12px 40px 0 hsl(0 0% 0% / 0.45);
   }
+
+  /* Liquid morphing effect */
+  .liquid-morph {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Magnetic hover effect */
+  .magnetic-hover {
+    transition: transform 0.2s ease-out;
+  }
+
+  .magnetic-hover:hover {
+    transform: scale(1.05);
+  }
 }
 
 @layer base {

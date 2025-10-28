@@ -1,8 +1,10 @@
 import { content } from "@/content/content";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
-import Prism from "@/components/Prism";
-import { prismConfig } from "@/config/prismConfig";
+
+// Responsive scale settings
+const MOBILE_SCALE = 0.75; // Nastavenie pre telefóny (< 768px)
+const DESKTOP_SCALE = 1.0; // Nastavenie pre počítače (>= 768px)
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -15,46 +17,40 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{ minHeight: '100vh' }}
     >
-      {/* Prism Animated Background */}
-      <div className="absolute inset-0">
-        <Prism
-          animationType={prismConfig.animationType}
-          timeScale={prismConfig.timeScale}
-          height={prismConfig.height}
-          baseWidth={prismConfig.baseWidth}
-          scale={prismConfig.scale}
-          hueShift={prismConfig.hueShift}
-          colorFrequency={prismConfig.colorFrequency}
-          noise={prismConfig.noise}
-          glow={prismConfig.glow}
-          bloom={prismConfig.bloom}
-          transparent={prismConfig.transparent}
-          suspendWhenOffscreen={prismConfig.suspendWhenOffscreen}
-          offset={prismConfig.offset}
-          hoverStrength={prismConfig.hoverStrength}
-          inertia={prismConfig.inertia}
-        />
-      </div>
+      {/* Simple gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10" />
+
+      {/* Gradient fade to background at bottom for smooth transition */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-[5]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="animate-fade-in space-y-8">
+        <div 
+          className="space-y-8 origin-center transition-transform duration-300"
+          style={{ 
+            transform: window.innerWidth >= 768 
+              ? `scale(${DESKTOP_SCALE})` 
+              : `scale(${MOBILE_SCALE})` 
+          }}
+        >
           {/* Logo */}
           <div className="space-y-4">
             <img 
               src="/atd_logo.png" 
               alt="AT Digital Logo" 
               className="mx-auto w-full max-w-3xl h-auto"
+              style={{ filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 30px rgba(0, 0, 0, 0.9))' }}
             />
-            <p className="text-xl md:text-2xl text-primary font-medium">
+            <p className="text-xl md:text-2xl text-primary font-medium" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.7)' }}>
               {content.hero.subtitle}
             </p>
           </div>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.7)' }}>
             {content.hero.description}
           </p>
 
@@ -63,7 +59,7 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection("#services")}
-              className="group glass-hover rounded-xl px-8 py-6 text-lg bg-primary hover:bg-primary-glow"
+              className="bg-transparent backdrop-blur-md bg-background/30 rounded-xl px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:bg-background/40 text-primary-foreground font-semibold"
             >
               {content.hero.buttons.services}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -72,7 +68,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => (window.location.href = "/academia")}
-              className="group glass rounded-xl px-8 py-6 text-lg border-primary/30 hover:border-primary hover:bg-primary/10"
+              className="bg-transparent backdrop-blur-md bg-background/30 rounded-xl px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:bg-background/40 text-foreground/90 hover:text-foreground font-medium border-0"
             >
               <BookOpen className="mr-2 h-5 w-5" />
               {content.hero.buttons.academia}

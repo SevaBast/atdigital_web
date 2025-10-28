@@ -5,14 +5,17 @@ const PartnersBanner = () => {
   const allLogos = [...content.partners.logos, ...content.partners.logos];
 
   return (
-    <section className="py-12 overflow-hidden bg-background-elevated/50">
-      <div className="container mx-auto px-4 mb-8">
+    <section className="relative py-12 overflow-hidden">
+      {/* Gradient blur overlay at top for smooth transition from Hero */}
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-background/50 to-transparent pointer-events-none" />
+      
+      <div className="container mx-auto px-4 mb-8 relative z-10">
         <h3 className="text-center text-lg text-muted-foreground">
           {content.partners.title}
         </h3>
       </div>
       
-      <div className="relative">
+      <div className="relative z-10">
         <div className="flex animate-scroll">
           {allLogos.map((logo, index) => (
             <div
