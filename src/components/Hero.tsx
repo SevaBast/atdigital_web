@@ -1,6 +1,7 @@
 import { content } from "@/content/content";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 // Responsive scale settings
 const MOBILE_SCALE = 0.75; // Nastavenie pre telefóny (< 768px)
@@ -17,17 +18,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center justify-center overflow-hidden"
-      style={{ minHeight: '100vh' }}
+      className="relative"
     >
-      {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10" />
+      {/* Aurora Background with northern lights effect */}
+      <AuroraBackground showRadialGradient={true}>
+        {/* Gradient fade to background at bottom for smooth transition */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-[5]" />
 
-      {/* Gradient fade to background at bottom for smooth transition */}
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-[5]" />
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 text-center">
         <div 
           className="space-y-8 origin-center transition-transform duration-300"
           style={{ 
@@ -78,11 +77,12 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
         <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse" />
         </div>
       </div>
+      </AuroraBackground>
     </section>
   );
 };
