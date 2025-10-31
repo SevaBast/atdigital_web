@@ -144,7 +144,7 @@ const About = () => {
         {/* Map */}
         <div className="w-full h-[400px] rounded-2xl overflow-hidden glass">
           <iframe
-            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.5!2d${content.about.mapCenter.lng}!3d${content.about.mapCenter.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA4JzU1LjAiTiAxN8KwMDYnMjcuNyJF!5e0!3m2!1sen!2ssk!4v1234567890!5m2!1sen!2ssk`}
+            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.5!2d18.7698794!3d49.1987816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47145995c4b7663f:0xb13c387934e1c7e!2sAT%20Digital!5e0!3m2!1ssk!2ssk!4v1234567890!5m2!1ssk!2ssk`}
             width="100%"
             height="100%"
             style={{ border: 0, filter: "grayscale(1) invert(1) contrast(0.8)" }}

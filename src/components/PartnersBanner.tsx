@@ -1,13 +1,24 @@
 import { content } from "@/content/content";
+import { LogoLoop } from "@/components/ui/logo-loop";
+import { partnersConfig } from "@/config/partnersConfig";
 
 const PartnersBanner = () => {
-  // Duplicate logos for seamless loop
-  const allLogos = [...content.partners.logos, ...content.partners.logos];
+  // Transform logos to LogoLoop format
+  const logos = content.partners.logos.map(logo => ({
+    src: logo.image,
+    alt: logo.name,
+    title: logo.name,
+  }));
 
   return (
-    <section className="relative py-12 overflow-hidden">
+    <section className="relative py-12">
       {/* Gradient blur overlay at top for smooth transition from Hero */}
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-background/50 to-transparent pointer-events-none" />
+      {partnersConfig.section.topGradient.enabled && (
+        <div 
+          className="absolute inset-x-0 top-0 bg-gradient-to-b from-background via-background/50 to-transparent pointer-events-none"
+          style={{ height: `${partnersConfig.section.topGradient.height}px` }}
+        />
+      )}
       
       <div className="container mx-auto px-4 mb-8 relative z-10">
         <h3 className="text-center text-lg text-muted-foreground">
@@ -16,18 +27,17 @@ const PartnersBanner = () => {
       </div>
       
       <div className="relative z-10">
-        <div className="flex animate-scroll">
-          {allLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 mx-8 glass rounded-xl px-8 py-4 min-w-[200px] flex items-center justify-center"
-            >
-              <span className="text-xl font-semibold text-foreground/60">
-                {logo}
-              </span>
-            </div>
-          ))}
-        </div>
+        <LogoLoop
+          logos={logos}
+          speed={partnersConfig.logoLoop.speed}
+          direction={partnersConfig.logoLoop.direction}
+          logoHeight={partnersConfig.logoLoop.logoHeight}
+          gap={partnersConfig.logoLoop.gap}
+          pauseOnHover={partnersConfig.logoLoop.pauseOnHover}
+          fadeOut={partnersConfig.logoLoop.fadeOut}
+          fadeOutColor={partnersConfig.logoLoop.fadeOutColor}
+          scaleOnHover={partnersConfig.logoLoop.scaleOnHover}
+        />
       </div>
     </section>
   );

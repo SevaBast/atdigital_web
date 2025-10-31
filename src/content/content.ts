@@ -25,8 +25,13 @@ export const content = {
   partners: {
     title: "Dôverujú nám",
     logos: [
-      "Siemens", "ABB", "Volkswagen", "Bosch", "BMW", 
-      "Samsung", "Microsoft", "SAP", "Oracle", "IBM"
+      { name: "AT Park", image: "/partners/atpark.png" },
+      { name: "exe", image: "/partners/exe.png" },
+      { name: "Flaton", image: "/partners/flaton.png" },
+      { name: "Jungheinrich", image: "/partners/jungheinrich.png" },
+      { name: "AT Crystals", image: "/partners/atcrystals.png" },
+      { name: "EdgeCom", image: "/partners/edgecom.png" },
+      { name: "University of Žilina", image: "/partners/uniza.png" },
     ],
   },
 
@@ -39,20 +44,25 @@ export const content = {
         name: "Digitalizácia",
         services: [
           {
-            name: "Digital Twin",
-            description: "Vytvorenie digitálneho dvojčaťa vašich výrobných procesov pre optimalizáciu a simuláciu.",
-            benefits: ["Zníženie nákladov o 20-30%", "Predikcia problémov", "Optimalizácia procesov"]
+            name: "3D skenovanie a digitalizácia",
+            description: "text",
+            benefits: ["abc"]
           },
           {
-            name: "IoT integrácia",
-            description: "Prepojenie strojov a zariadení pre real-time monitoring a kontrolu výroby.",
-            benefits: ["Real-time dáta", "Preventívna údržba", "Zvýšená efektivita"]
+            name: "Tvorba digitálnej dokumentácie v 2D",
+            description: "text",
+            benefits: ["text"]
           },
           {
-            name: "Industry 4.0 Consulting",
-            description: "Strategické poradenstvo pre prechod na smart factory koncept.",
-            benefits: ["Roadmapa digitalizácie", "ROI analýza", "Implementačný plán"]
-          }
+            name: "Tvorba digitálnej dokumentácie v 3D",
+            description: "text",
+            benefits: ["text"]
+          },
+          {
+            name: "Vizualizácia",
+            description: "text",
+            benefits: ["text"]
+          },
         ]
       },
       {
@@ -60,20 +70,25 @@ export const content = {
         name: "Koncepčné projektovanie",
         services: [
           {
-            name: "Layout planning",
-            description: "Optimálne rozmiestnenie výrobných liniek a logistických tokov.",
-            benefits: ["Efektívne využitie priestoru", "Optimalizované toky", "Flexibilita"]
+            name: "Návrh výrobných konceptov",
+            description: "text",
+            benefits: ["text"]
           },
           {
-            name: "Process design",
-            description: "Návrh a optimalizácia výrobných procesov pre maximálnu efektivitu.",
-            benefits: ["Lean production", "Waste reduction", "Štandardizácia"]
+            name: "Návrh logistických konceptov",
+            description: "text",
+            benefits: ["text"]
           },
           {
-            name: "Feasibility studies",
-            description: "Komplexná analýza realizovateľnosti investičných projektov.",
-            benefits: ["Rizikové hodnotenie", "Finančná analýza", "Technická realizovateľnosť"]
-          }
+            name: "Plánovanie výrobných, logistických a skladových kapacít",
+            description: "text",
+            benefits: ["text"]
+          },
+          {
+            name: "Návrh dispozičných alebo procesných riešení",
+            description: "text",
+            benefits: ["text"]
+          },
         ]
       },
       {
@@ -81,40 +96,45 @@ export const content = {
         name: "Detailné projektovanie",
         services: [
           {
-            name: "3D modelovanie",
-            description: "Detailné 3D modely výrobných zariadení a systémov.",
-            benefits: ["Vizualizácia", "Clash detection", "Presná dokumentácia"]
+            name: "Detailné projektovanie výrobných a montážnych pracovísk",
+            description: "text",
+            benefits: ["text"]
           },
           {
-            name: "Technická dokumentácia",
-            description: "Kompletná výrobná a montážna dokumentácia pre realizáciu.",
-            benefits: ["Štandardizované výstupy", "BIM integrácia", "As-built dokumentácia"]
+            name: "Kapacitné dimenzovanie výroby a logistiky",
+            description: "text",
+            benefits: ["text"]
           },
           {
-            name: "Supplier management",
-            description: "Riadenie dodávateľov a koordinácia dodávok technológií.",
-            benefits: ["Vendor evaluation", "Quality control", "Termínové riadenie"]
-          }
+            name: "Normovanie pracovných činností a tvorba štandardov",
+            description: "text",
+            benefits: ["text"]
+          },
+          {
+            name: "Ergonomické posúdenie",
+            description: "text",
+            benefits: ["text", "text", "text"]
+          },
         ]
       },
       {
         id: "optimalizacia",
-        name: "Optimalizácia",
+        name: "AI nastroje a analýza",
         services: [
           {
-            name: "OEE improvement",
-            description: "Zvyšovanie celkovej efektivity zariadení (Overall Equipment Effectiveness).",
-            benefits: ["Merateľné výsledky", "Continuous improvement", "KPI tracking"]
+            name: "AI agenty na mieru",
+            description: "text",
+            benefits: ["text", "text", "text"]
           },
           {
-            name: "Energy efficiency",
-            description: "Optimalizácia energetickej náročnosti výrobných procesov.",
-            benefits: ["Úspora energií", "ESG compliance", "Carbon footprint reduction"]
+            name: "Big data analýza a vizualizácia",
+            description: "text",
+            benefits: ["text", "text", "text"]
           },
           {
-            name: "Lean Six Sigma",
-            description: "Implementácia metód Lean a Six Sigma pre eliminá­ciu plytvania.",
-            benefits: ["Zníženie variability", "Process excellence", "Kultúra zlepšovania"]
+            name: "Automatizácia procesov",
+            description: "text",
+            benefits: ["text", "text", "text"]
           }
         ]
       }
@@ -215,8 +235,8 @@ export const content = {
       button: "Odoslať správu"
     },
     mapCenter: {
-      lat: 48.1486,
-      lng: 17.1077
+      lat: 49.1987816, //48.1486
+      lng: 18.7698794  //17.1077
     }
   },
 
