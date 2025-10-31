@@ -42,7 +42,7 @@ const Navigation = () => {
             className="flex items-center"
           >
             <img 
-              src="/atd_logo_mini.png" 
+              src={`${import.meta.env.BASE_URL}atd_logo_mini.png`}
               alt="AT Digital" 
               className="h-8 w-auto"
               style={{ filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6))' }}

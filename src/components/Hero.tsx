@@ -38,7 +38,7 @@ const Hero = () => {
           {/* Logo */}
           <div className="space-y-4">
             <img 
-              src="/atd_logo.png" 
+              src={`${import.meta.env.BASE_URL}atd_logo.png`}
               alt="AT Digital Logo" 
               className="mx-auto w-full max-w-3xl h-auto"
               style={{ filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 30px rgba(0, 0, 0, 0.9))' }}

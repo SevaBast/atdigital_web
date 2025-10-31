@@ -3,9 +3,9 @@ import { LogoLoop } from "@/components/ui/logo-loop";
 import { partnersConfig } from "@/config/partnersConfig";
 
 const PartnersBanner = () => {
-  // Transform logos to LogoLoop format
+  // Transform logos to LogoLoop format with BASE_URL
   const logos = content.partners.logos.map(logo => ({
-    src: logo.image,
+    src: `${import.meta.env.BASE_URL}${logo.image.startsWith('/') ? logo.image.slice(1) : logo.image}`,
     alt: logo.name,
     title: logo.name,
   }));
