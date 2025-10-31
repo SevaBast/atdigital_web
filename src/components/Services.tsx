@@ -35,7 +35,7 @@ const Services = () => {
         </div>
 
         <Tabs defaultValue={content.services.categories[0].id} className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="bg-transparent border-0 p-0 mb-12 flex flex-wrap justify-center gap-4 h-auto relative">
+          <TabsList className="bg-transparent border-0 p-0 mb-12 flex flex-col md:flex-row md:flex-wrap justify-center gap-4 h-auto relative">
             {/* Liquid Morphing Background - Only Behind Active Tab */}
             <div
               className="absolute bg-gradient-to-r from-primary/80 via-primary-glow/80 to-primary/80 rounded-xl transition-all duration-500 ease-out backdrop-blur-lg -z-0"
