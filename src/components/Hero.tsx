@@ -2,6 +2,7 @@ import { content } from "@/content/content";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { Link } from "react-router-dom";
 
 // Responsive scale settings
 const MOBILE_SCALE = 0.75; // Nastavenie pre telefóny (< 768px)
@@ -66,11 +67,13 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => (window.location.href = "/academia")}
+              asChild
               className="bg-transparent backdrop-blur-md bg-background/30 rounded-xl px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:bg-background/40 text-foreground/90 hover:text-foreground font-medium border-0"
             >
-              <BookOpen className="mr-2 h-5 w-5" />
-              {content.hero.buttons.academia}
+              <Link to="/academia">
+                <BookOpen className="mr-2 h-5 w-5" />
+                {content.hero.buttons.academia}
+              </Link>
             </Button>
           </div>
         </div>
