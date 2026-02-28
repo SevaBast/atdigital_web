@@ -1,11 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { content } from "@/content/content";
+import { useContent } from "@/context/LanguageContext";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Calendar, User, Clock, Download } from "lucide-react";
+import { ArrowLeft, Calendar, User, Clock, Download, Tag } from "lucide-react";
 
 const ArticleDetail = () => {
+  const content = useContent();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -37,7 +39,7 @@ const ArticleDetail = () => {
         <Button
           onClick={() => navigate("/academia")}
           variant="outline"
-          className="mb-8 glass-hover border-primary/30"
+          className="mb-8 border-primary/10 hover:border-primary/25 hover:bg-primary/5"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Späť na Akadémiu
@@ -45,81 +47,68 @@ const ArticleDetail = () => {
 
         {/* Article Header */}
         <article className="max-w-4xl mx-auto">
-          <div className="glass rounded-2xl p-8 md:p-12 mb-8 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              {article.title}
-            </h1>
+          <div className="bento-card relative rounded-2xl overflow-hidden border border-white/[0.06] p-8 md:p-12 mb-8 animate-fade-in">
+            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40" />
+            <div className="relative z-10">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                {article.title}
+              </h1>
 
-            <div className="flex flex-wrap gap-2 mb-6">
-              {article.tags.map((tag) => (
-                <Badge
-                  key={tag}
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {article.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1.5 text-xs text-primary/90 bg-primary/5 border border-primary/10 rounded-lg px-2.5 py-1"
+                  >
+                    <Tag className="h-3 w-3 flex-shrink-0" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-6 text-muted-foreground mb-6 text-sm">
+                <span className="inline-flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  {article.author}
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  {new Date(article.date).toLocaleDateString("sk-SK")}
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  {article.readingTime} {content.academia.readingTime}
+                </span>
+              </div>
+
+              {article.pdfUrl && (
+                <Button
                   variant="outline"
-                  className="glass border-primary/30"
+                  size="sm"
+                  className="border-primary/10 hover:border-primary/25 hover:bg-primary/5"
+                  onClick={() => window.open(article.pdfUrl!, "_blank")}
                 >
-                  {tag}
-                </Badge>
-              ))}
+                  <Download className="h-4 w-4 mr-2" />
+                  {content.academia.downloadPdf}
+                </Button>
+              )}
             </div>
-
-            <div className="flex flex-wrap gap-6 text-muted-foreground mb-6">
-              <div className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                <span>{article.author}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <span>{new Date(article.date).toLocaleDateString("sk-SK")}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                <span>{article.readingTime} {content.academia.readingTime}</span>
-              </div>
-            </div>
-
-            {article.pdfUrl && (
-              <Button
-                variant="outline"
-                size="sm"
-                className="glass-hover border-primary/30 hover:bg-primary/10"
-                onClick={() => window.open(article.pdfUrl!, "_blank")}
-              >
-                <Download className="h-4 w-4 mr-2" />
-                {content.academia.downloadPdf}
-              </Button>
-            )}
           </div>
 
           {/* Article Content */}
-          <div className="glass rounded-2xl p-8 md:p-12 animate-fade-in">
-            <div className="prose prose-invert prose-lg max-w-none">
-              <div
-                className="text-foreground/90 leading-relaxed space-y-6"
-                dangerouslySetInnerHTML={{ __html: article.fullContent }}
+          <div className="bento-card relative rounded-2xl overflow-hidden border border-white/[0.06] p-8 md:p-12 animate-fade-in">
+            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40" />
+            <div className="relative z-10">
+              <MarkdownRenderer
+                content={article.content}
+                className="prose prose-invert prose-lg max-w-none"
               />
             </div>
           </div>
         </article>
       </div>
 
-      {/* Footer */}
-      <footer className="py-8 border-t border-border/30 bg-background-elevated/50">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
-              {content.footer.copyright}
-            </p>
-            <div className="flex gap-6">
-              <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {content.footer.links.privacy}
-              </button>
-              <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {content.footer.links.terms}
-              </button>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

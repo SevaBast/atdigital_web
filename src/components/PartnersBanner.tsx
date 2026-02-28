@@ -1,8 +1,11 @@
-import { content } from "@/content/content";
+import { useContent } from "@/context/LanguageContext";
 import { LogoLoop } from "@/components/ui/logo-loop";
 import { partnersConfig } from "@/config/partnersConfig";
+import { useInView } from "@/hooks/useInView";
 
 const PartnersBanner = () => {
+  const content = useContent();
+  const { ref, isInView } = useInView();
   // Transform logos to LogoLoop format with BASE_URL
   const logos = content.partners.logos.map(logo => ({
     src: `${import.meta.env.BASE_URL}${logo.image.startsWith('/') ? logo.image.slice(1) : logo.image}`,
@@ -11,7 +14,10 @@ const PartnersBanner = () => {
   }));
 
   return (
-    <section className="relative py-12">
+    <section
+      ref={ref}
+      className={`relative py-12 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+    >
       {/* Gradient blur overlay at top for smooth transition from Hero */}
       {partnersConfig.section.topGradient.enabled && (
         <div 
@@ -26,7 +32,7 @@ const PartnersBanner = () => {
         </h3>
       </div>
       
-      <div className="relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <LogoLoop
           logos={logos}
           speed={partnersConfig.logoLoop.speed}

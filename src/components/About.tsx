@@ -1,13 +1,16 @@
 import { useState } from "react";
-import { content } from "@/content/content";
+import { useContent } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Mail, Phone, Building2, Send } from "lucide-react";
 import { toast } from "sonner";
+import { useInView } from "@/hooks/useInView";
 
 const About = () => {
+  const content = useContent();
+  const { ref, isInView } = useInView();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,8 +35,11 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 relative bg-background-elevated/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             {content.about.title}
           </h2>

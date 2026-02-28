@@ -4,11 +4,16 @@
 
   --logoloop-gap: 32px;
   --logoloop-logoHeight: 28px;
-  --logoloop-fadeColorAuto: #ffffff;
+  --logoloop-fadeColor: hsl(var(--background));
 }
 
-/* Mobile - väčšie fade gradienty */
+/* Mobile - menšie logá a medzery pre lepší prehľad */
 @media (max-width: 768px) {
+  .logoloop {
+    --logoloop-logoHeight: 20px;
+    --logoloop-gap: 24px;
+  }
+
   .logoloop--fade::before,
   .logoloop--fade::after {
     width: clamp(150px, 25%, 350px);
@@ -22,7 +27,7 @@
 
 @media (prefers-color-scheme: dark) {
   .logoloop {
-    --logoloop-fadeColorAuto: #0b0b0b;
+    --logoloop-fadeColor: hsl(var(--background));
   }
 }
 
@@ -121,8 +126,8 @@
   left: 0;
   background: linear-gradient(
     to right,
-    #101318 0%,
-    rgba(16, 19, 24, 0) 100%
+    var(--logoloop-fadeColor) 0%,
+    transparent 100%
   );
 }
 
@@ -130,8 +135,8 @@
   right: 0;
   background: linear-gradient(
     to left,
-    #101318 0%,
-    rgba(16, 19, 24, 0) 100%
+    var(--logoloop-fadeColor) 0%,
+    transparent 100%
   );
 }
 

@@ -1,95 +1,130 @@
-import { useState, useRef, useEffect } from "react";
-import { content } from "@/content/content";
-import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useContent } from "@/context/LanguageContext";
+import { useState, useCallback } from "react";
+import { AnimatedTabs, TabsContent } from "@/components/AnimatedTabs";
+import { useInView } from "@/hooks/useInView";
 import { CheckCircle2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
+// ─── Bento Grid Patterns ──────────────────────────────────────────
+const BENTO_SPANS: Record<number, number[]> = {
+  1: [3],
+  2: [2, 1],
+  3: [2, 1, 3],
+  4: [2, 1, 1, 2],
+  5: [2, 1, 1, 2, 3],
+  6: [2, 1, 1, 2, 2, 1],
+  7: [2, 1, 1, 2, 1, 2, 3],
+  8: [2, 1, 1, 2, 2, 1, 1, 2],
+};
+
+function getColSpan(index: number, total: number): number {
+  return BENTO_SPANS[total]?.[index] ?? 1;
+}
+
+// ─── Bento Card ────────────────────────────────────────────────────
+interface BentoCardProps {
+  title: string;
+  description: string;
+  benefits: string[];
+  index: number;
+  colSpan: number;
+}
+
+const BentoCard = ({ title, description, benefits, index, colSpan }: BentoCardProps) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+  }, []);
+
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      className={cn(
+        "bento-card relative group rounded-2xl overflow-hidden",
+        "border border-white/[0.06]",
+        "transition-all duration-500 ease-out",
+        "hover:border-primary/25 hover:-translate-y-1",
+        "opacity-0 animate-bento-in",
+        colSpan === 2 && "md:col-span-2",
+        colSpan === 3 && "md:col-span-3",
+      )}
+      style={{
+        animationDelay: `${index * 80}ms`,
+        animationFillMode: "both",
+      }}
+    >
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative z-10 p-6 md:p-8 h-full flex flex-col min-h-[140px]">
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed flex-1">
+          {description}
+        </p>
+        {benefits.length > 0 && benefits[0] !== "" && (
+          <div className="flex flex-wrap gap-2 pt-4 mt-auto">
+            {benefits.map((benefit, i) => (
+              <span key={i} className="inline-flex items-center gap-1.5 text-xs text-primary/90 bg-primary/5 border border-primary/10 rounded-lg px-2.5 py-1">
+                <CheckCircle2 className="h-3 w-3 flex-shrink-0" />
+                {benefit}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ─── Services Section ──────────────────────────────────────────────
 const Services = () => {
+  const content = useContent();
+  const { ref, isInView } = useInView();
   const [activeTab, setActiveTab] = useState(content.services.categories[0].id);
-  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0, height: 0, top: 0 });
-  const tabsRef = useRef<{ [key: string]: HTMLButtonElement | null }>({});
 
-  useEffect(() => {
-    const activeElement = tabsRef.current[activeTab];
-    if (activeElement) {
-      const parent = activeElement.parentElement;
-      setIndicatorStyle({
-        width: activeElement.offsetWidth,
-        left: activeElement.offsetLeft,
-        height: activeElement.offsetHeight,
-        top: activeElement.offsetTop,
-      });
-    }
-  }, [activeTab]);
+  const tabItems = content.services.categories.map((c) => ({ id: c.id, label: c.name }));
+  const activeCategory = content.services.categories.find((c) => c.id === activeTab);
 
   return (
     <section id="services" className="py-24 relative">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+      <div
+        ref={ref}
+        className={cn(
+          "container mx-auto px-4 transition-all duration-700",
+          isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+        )}
+      >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             {content.services.title}
           </h2>
-          <p className="text-xl text-muted-foreground">
-            {content.services.subtitle}
-          </p>
+          <p className="text-xl text-muted-foreground">{content.services.subtitle}</p>
         </div>
 
-        <Tabs defaultValue={content.services.categories[0].id} className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="bg-transparent border-0 p-0 mb-12 flex flex-col md:flex-row md:flex-wrap justify-center gap-4 h-auto relative">
-            {/* Liquid Morphing Background - Only Behind Active Tab */}
-            <div
-              className="absolute bg-gradient-to-r from-primary/80 via-primary-glow/80 to-primary/80 rounded-xl transition-all duration-500 ease-out backdrop-blur-lg -z-0"
-              style={{
-                width: `${indicatorStyle.width}px`,
-                height: `${indicatorStyle.height}px`,
-                left: `${indicatorStyle.left}px`,
-                top: `${indicatorStyle.top}px`,
-                boxShadow: '0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1)',
-                filter: 'blur(1px)',
-              }}
-            />
-            
-            {content.services.categories.map((category) => (
-              <TabsTrigger
-                key={category.id}
-                value={category.id}
-                ref={(el) => (tabsRef.current[category.id] = el)}
-                className="bg-transparent rounded-xl px-6 py-3 relative z-10 transition-all duration-300 hover:scale-105 data-[state=active]:bg-background/10 data-[state=active]:backdrop-blur-lg data-[state=active]:text-primary-foreground data-[state=active]:font-semibold data-[state=inactive]:text-foreground/70 data-[state=inactive]:hover:text-foreground"
-              >
-                {category.name}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
+        <AnimatedTabs
+          items={tabItems}
+          defaultValue={content.services.categories[0].id}
+          tabsListClassName="flex-col md:flex-row md:flex-wrap"
+          onValueChange={setActiveTab}
+        >
           {content.services.categories.map((category) => (
             <TabsContent key={category.id} value={category.id} className="animate-fade-in">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                 {category.services.map((service, index) => (
-                  <Card
-                    key={index}
-                    className="glass glass-hover rounded-2xl p-6 space-y-4 border-0"
-                  >
-                    <h3 className="text-2xl font-bold text-foreground">
-                      {service.name}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="space-y-2 pt-4">
-                      <p className="text-sm font-semibold text-primary">Výhody:</p>
-                      {service.benefits.map((benefit, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-foreground/80">{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </Card>
+                  <BentoCard
+                    key={`${category.id}-${index}`}
+                    title={service.name}
+                    description={service.description}
+                    benefits={service.benefits}
+                    index={index}
+                    colSpan={getColSpan(index, category.services.length)}
+                  />
                 ))}
               </div>
             </TabsContent>
           ))}
-        </Tabs>
+        </AnimatedTabs>
       </div>
     </section>
   );

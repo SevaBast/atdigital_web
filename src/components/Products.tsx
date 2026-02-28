@@ -1,31 +1,64 @@
-import { useState, useRef, useEffect } from "react";
-import { content } from "@/content/content";
-import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useContent } from "@/context/LanguageContext";
+import { useCallback } from "react";
+import { AnimatedTabs, TabsContent } from "@/components/AnimatedTabs";
+import { useInView } from "@/hooks/useInView";
 import { Zap } from "lucide-react";
+import { cn } from "@/lib/utils";
 
+// ─── Product Feature Card (bento-style) ───────────────────────────
+interface FeatureCardProps {
+  text: string;
+  index: number;
+}
+
+const FeatureCard = ({ text, index }: FeatureCardProps) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+  }, []);
+
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      className={cn(
+        "bento-card relative group rounded-xl overflow-hidden",
+        "border border-white/[0.06]",
+        "transition-all duration-500 ease-out",
+        "hover:border-primary/25 hover:-translate-y-0.5",
+        "opacity-0 animate-bento-in",
+      )}
+      style={{
+        animationDelay: `${(index + 1) * 60}ms`,
+        animationFillMode: "both",
+      }}
+    >
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative z-10 p-4 flex items-start gap-3">
+        <Zap className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+        <span className="text-sm text-foreground/85 leading-relaxed">{text}</span>
+      </div>
+    </div>
+  );
+};
+
+// ─── Products Section ──────────────────────────────────────────────
 const Products = () => {
-  const [activeTab, setActiveTab] = useState(content.products.categories[0].id);
-  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0, height: 0, top: 0 });
-  const tabsRef = useRef<{ [key: string]: HTMLButtonElement | null }>({});
+  const content = useContent();
+  const { ref, isInView } = useInView();
 
-  useEffect(() => {
-    const activeElement = tabsRef.current[activeTab];
-    if (activeElement) {
-      const parent = activeElement.parentElement;
-      setIndicatorStyle({
-        width: activeElement.offsetWidth,
-        left: activeElement.offsetLeft,
-        height: activeElement.offsetHeight,
-        top: activeElement.offsetTop,
-      });
-    }
-  }, [activeTab]);
+  const tabItems = content.products.categories.map((c) => ({ id: c.id, label: c.name }));
 
   return (
     <section id="products" className="py-24 relative bg-background-elevated/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+      <div
+        ref={ref}
+        className={cn(
+          "container mx-auto px-4 transition-all duration-700",
+          isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+        )}
+      >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             {content.products.title}
           </h2>
@@ -34,59 +67,37 @@ const Products = () => {
           </p>
         </div>
 
-        <Tabs defaultValue={content.products.categories[0].id} className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="bg-transparent border-0 p-0 mb-12 flex flex-wrap justify-center gap-4 h-auto relative">
-            {/* Liquid Morphing Background - Only Behind Active Tab */}
-            <div
-              className="absolute bg-gradient-to-r from-primary/80 via-primary-glow/80 to-primary/80 rounded-xl transition-all duration-500 ease-out backdrop-blur-lg -z-0"
-              style={{
-                width: `${indicatorStyle.width}px`,
-                height: `${indicatorStyle.height}px`,
-                left: `${indicatorStyle.left}px`,
-                top: `${indicatorStyle.top}px`,
-                boxShadow: '0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1)',
-                filter: 'blur(1px)',
-              }}
-            />
-            
-            {content.products.categories.map((category) => (
-              <TabsTrigger
-                key={category.id}
-                value={category.id}
-                ref={(el) => (tabsRef.current[category.id] = el)}
-                className="bg-transparent rounded-xl px-6 py-3 relative z-10 transition-all duration-300 hover:scale-105 data-[state=active]:bg-background/20 data-[state=active]:backdrop-blur-lg data-[state=active]:text-primary-foreground data-[state=active]:font-semibold data-[state=inactive]:text-foreground/70 data-[state=inactive]:hover:text-foreground"
-              >
-                {category.name}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
+        <AnimatedTabs items={tabItems} defaultValue={content.products.categories[0].id}>
           {content.products.categories.map((category) => (
             <TabsContent key={category.id} value={category.id} className="animate-fade-in">
-              <Card className="glass glass-hover rounded-2xl p-8 md:p-12 border-0 max-w-4xl mx-auto">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-bold text-foreground">
-                    {category.name}
-                  </h3>
-                  <p className="text-lg text-foreground/80 leading-relaxed">
-                    {category.description}
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-4 pt-4">
-                    {category.features.map((feature, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-3 glass rounded-xl p-4"
-                      >
-                        <Zap className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-foreground/90">{feature}</span>
-                      </div>
-                    ))}
+              <div className="mx-auto space-y-6">
+                {/* Description card */}
+                <div
+                  className="bento-card relative rounded-2xl overflow-hidden border border-white/[0.06] opacity-0 animate-bento-in"
+                  style={{ animationFillMode: "both" }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+                  }}
+                >
+                  <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40" />
+                  <div className="relative z-10 p-6 md:p-10">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{category.name}</h3>
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{category.description}</p>
                   </div>
                 </div>
-              </Card>
+
+                {/* Features grid */}
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {category.features.map((feature, i) => (
+                    <FeatureCard key={i} text={feature} index={i} />
+                  ))}
+                </div>
+              </div>
             </TabsContent>
           ))}
-        </Tabs>
+        </AnimatedTabs>
       </div>
     </section>
   );

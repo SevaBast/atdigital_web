@@ -182,9 +182,14 @@ export const LogoLoop = memo<LogoLoopProps>(
     const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     // Detect mobile
-    const isMobile = useMemo(() => {
-      if (typeof window === 'undefined') return false;
-      return window.innerWidth <= 768;
+    const [isMobile, setIsMobile] = useState(() =>
+      typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+    );
+
+    useEffect(() => {
+      const check = () => setIsMobile(window.innerWidth <= 768);
+      window.addEventListener('resize', check);
+      return () => window.removeEventListener('resize', check);
     }, []);
 
     // Auto-resume animation after 1s on mobile
