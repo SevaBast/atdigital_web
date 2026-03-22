@@ -1,46 +1,9 @@
 import { useContent } from "@/context/LanguageContext";
-import { useCallback } from "react";
 import { AnimatedTabs, TabsContent } from "@/components/AnimatedTabs";
 import { useInView } from "@/hooks/useInView";
 import { Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-// ─── Product Feature Card (bento-style) ───────────────────────────
-interface FeatureCardProps {
-  text: string;
-  index: number;
-}
-
-const FeatureCard = ({ text, index }: FeatureCardProps) => {
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-  }, []);
-
-  return (
-    <div
-      onMouseMove={handleMouseMove}
-      className={cn(
-        "bento-card relative group rounded-xl overflow-hidden",
-        "border border-white/[0.06]",
-        "transition-all duration-500 ease-out",
-        "hover:border-primary/25 hover:-translate-y-0.5",
-        "opacity-0 animate-bento-in",
-      )}
-      style={{
-        animationDelay: `${(index + 1) * 60}ms`,
-        animationFillMode: "both",
-      }}
-    >
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative z-10 p-4 flex items-start gap-3">
-        <Zap className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-        <span className="text-sm text-foreground/85 leading-relaxed">{text}</span>
-      </div>
-    </div>
-  );
-};
+import { getIcon } from "@/lib/icons";
 
 // ─── Products Section ──────────────────────────────────────────────
 const Products = () => {
@@ -70,8 +33,8 @@ const Products = () => {
         <AnimatedTabs items={tabItems} defaultValue={content.products.categories[0].id}>
           {content.products.categories.map((category) => (
             <TabsContent key={category.id} value={category.id} className="animate-fade-in">
-              <div className="mx-auto space-y-6">
-                {/* Description card */}
+              <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+                {/* Left – single card with description + features */}
                 <div
                   className="bento-card relative rounded-2xl overflow-hidden border border-white/[0.06] opacity-0 animate-bento-in"
                   style={{ animationFillMode: "both" }}
@@ -82,17 +45,49 @@ const Products = () => {
                   }}
                 >
                   <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40" />
-                  <div className="relative z-10 p-6 md:p-10">
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{category.name}</h3>
-                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{category.description}</p>
+                  <div className="relative z-10 p-6 md:p-10 flex flex-col h-full">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 flex items-center gap-3">
+                      {(() => { const Icon = getIcon(category.icon); return Icon ? <Icon className="h-7 w-7 text-foreground flex-shrink-0" /> : null; })()}
+                      {category.name}
+                    </h3>
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">{category.description}</p>
+                    <ul className="space-y-3 mt-auto">
+                      {category.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Zap className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground/85 leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
-                {/* Features grid */}
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {category.features.map((feature, i) => (
-                    <FeatureCard key={i} text={feature} index={i} />
-                  ))}
+                {/* Right – media (image or video) */}
+                <div
+                  className="bento-card relative rounded-2xl overflow-hidden border border-white/[0.06] opacity-0 animate-bento-in"
+                  style={{ animationDelay: "100ms", animationFillMode: "both" }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+                  }}
+                >
+                  {category.media.type === "video" ? (
+                    <video
+                      src={category.media.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover min-h-[300px]"
+                    />
+                  ) : (
+                    <img
+                      src={category.media.src}
+                      alt={category.name}
+                      className="w-full h-full object-cover min-h-[300px]"
+                    />
+                  )}
                 </div>
               </div>
             </TabsContent>

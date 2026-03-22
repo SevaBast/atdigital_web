@@ -1,7 +1,17 @@
+import { useMemo } from "react";
 import { useContent } from "@/context/LanguageContext";
 import { LogoLoop } from "@/components/ui/logo-loop";
 import { partnersConfig } from "@/config/partnersConfig";
 import { useInView } from "@/hooks/useInView";
+
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 const PartnersBanner = () => {
   const content = useContent();
@@ -12,6 +22,10 @@ const PartnersBanner = () => {
     alt: logo.name,
     title: logo.name,
   }));
+
+  // Shuffle independently for each row on every mount
+  const logosRow1 = useMemo(() => shuffle(logos), [logos]);
+  const logosRow2 = useMemo(() => shuffle(logos), [logos]);
 
   return (
     <section
@@ -32,11 +46,22 @@ const PartnersBanner = () => {
         </h3>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 flex flex-col gap-4">
         <LogoLoop
-          logos={logos}
+          logos={logosRow1}
           speed={partnersConfig.logoLoop.speed}
-          direction={partnersConfig.logoLoop.direction}
+          direction="left"
+          logoHeight={partnersConfig.logoLoop.logoHeight}
+          gap={partnersConfig.logoLoop.gap}
+          pauseOnHover={partnersConfig.logoLoop.pauseOnHover}
+          fadeOut={partnersConfig.logoLoop.fadeOut}
+          fadeOutColor={partnersConfig.logoLoop.fadeOutColor}
+          scaleOnHover={partnersConfig.logoLoop.scaleOnHover}
+        />
+        <LogoLoop
+          logos={logosRow2}
+          speed={partnersConfig.logoLoop.speed}
+          direction="right"
           logoHeight={partnersConfig.logoLoop.logoHeight}
           gap={partnersConfig.logoLoop.gap}
           pauseOnHover={partnersConfig.logoLoop.pauseOnHover}

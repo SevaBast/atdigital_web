@@ -4,6 +4,7 @@ import { AnimatedTabs, TabsContent } from "@/components/AnimatedTabs";
 import { useInView } from "@/hooks/useInView";
 import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getIcon } from "@/lib/icons";
 
 // ─── Bento Grid Patterns ──────────────────────────────────────────
 const BENTO_SPANS: Record<number, number[]> = {
@@ -24,13 +25,14 @@ function getColSpan(index: number, total: number): number {
 // ─── Bento Card ────────────────────────────────────────────────────
 interface BentoCardProps {
   title: string;
+  icon: string;
   description: string;
   benefits: string[];
   index: number;
   colSpan: number;
 }
 
-const BentoCard = ({ title, description, benefits, index, colSpan }: BentoCardProps) => {
+const BentoCard = ({ title, icon, description, benefits, index, colSpan }: BentoCardProps) => {
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
@@ -56,7 +58,8 @@ const BentoCard = ({ title, description, benefits, index, colSpan }: BentoCardPr
     >
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10 p-6 md:p-8 h-full flex flex-col min-h-[140px]">
-        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 flex items-center gap-2.5">
+          {(() => { const Icon = getIcon(icon); return Icon ? <Icon className="h-5 w-5 text-foreground flex-shrink-0" /> : null; })()}
           {title}
         </h3>
         <p className="text-sm md:text-base text-muted-foreground leading-relaxed flex-1">
@@ -115,6 +118,7 @@ const Services = () => {
                   <BentoCard
                     key={`${category.id}-${index}`}
                     title={service.name}
+                    icon={service.icon}
                     description={service.description}
                     benefits={service.benefits}
                     index={index}

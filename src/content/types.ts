@@ -35,6 +35,7 @@ export interface PartnersContent {
 
 export interface Service {
   name: string;
+  icon: string;
   description: string;
   benefits: string[];
 }
@@ -54,8 +55,10 @@ export interface ServicesContent {
 export interface ProductCategory {
   id: string;
   name: string;
+  icon: string;
   description: string;
   features: string[];
+  media: { type: "image" | "video"; src: string };
 }
 
 export interface ProductsContent {
@@ -66,13 +69,9 @@ export interface ProductsContent {
 
 export interface ReferenceProject {
   name: string;
+  icon: string;
   description: string;
   highlights: string[];
-  media?: {
-    type: "image" | "video";
-    src: string;
-    alt?: string;
-  };
 }
 
 export interface ReferenceCategory {
@@ -99,6 +98,7 @@ export interface ContactInfo {
 export interface AboutContent {
   title: string;
   subtitle: string;
+  contactInfoTitle: string;
   contact: ContactInfo;
   form: {
     title: string;
@@ -110,6 +110,11 @@ export interface AboutContent {
       message: string;
     };
     button: string;
+    sending: string;
+    successMessage: string;
+    errorMessage: string;
+    captchaLabel: string;
+    captchaError: string;
   };
   mapCenter: {
     lat: number;
