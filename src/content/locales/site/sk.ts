@@ -166,6 +166,12 @@ export const sk: SiteContent = {
     ],
   },
 
+  // ─── LinkedIn Feed ──────────────────────────────────────────
+  linkedInFeed: {
+    title: "Sledujte nás",
+    subtitle: "Najnovšie príspevky z nášho LinkedIn profilu",
+  },
+
   // ─── Referencie ──────────────────────────────────────────────
   references: {
     title: "Referencie",
@@ -179,6 +185,16 @@ export const sk: SiteContent = {
             name: "Transformácia závodu pre výrobu nového produktu v skupine Tatravagonka",
             description: "Návrh komplexného výrobno-logistického konceptu pre integráciu nového typu výroby do existujúcich priestorov.",
             highlights: ["Digitalizácia priestorov pomocou laserového skenovania pre elimináciu kolízií pri zástavbe technológií", "Dynamické preverenie kapacít pre presný výpočet potrebných výrobných a logistických síl.", "Optimalizácia investície odborným porovnaním variantov manuálnej a automatizovanej výroby.", "Garantovaný ročný výkon celého systému vďaka presne navrhnutým výrobným sekvenciám.", "Kompletný realizačný podklad vo forme 3D prehliadky a harmonogramu implementácie."],
+          },
+          {
+            name: "Detailne projektovanie výroby konštrukcii v oblasti defence",
+            description: "Realizácia priestorovej dispozície novej haly a detailý návrh pracovísk pre segment defence. Kapacitné prepočty a dátová validácia procesov definovali presné umiestnenie technologických uzlov v parametrizovanom layoute, ktorého výstupom bolo technické zadanie pre zástavbu technológií zohľadňujúc špecifické požiadavky a bezpečnosť špeciálnej výroby.",
+            highlights: ["Optimálny návrh layoutu so zástavbou technológií, skladových zón a logistických trás.", "Kapacitné dimenzovanie výrobných zdrojov a personálu.", "Kvantifikácia medzioperačných plôch pre plynulý výrobný cyklus bez úzkych miest.", "Spracovanie technického generelu novej haly ako finálneho podkladu pre realizáciu."],
+          },
+          {
+            name: "Detailne projektovanie výroby konštrukcii v oblasti defence",
+            description: "Realizácia priestorovej dispozície novej haly a detailý návrh pracovísk pre segment defence. Kapacitné prepočty a dátová validácia procesov definovali presné umiestnenie technologických uzlov v parametrizovanom layoute, ktorého výstupom bolo technické zadanie pre zástavbu technológií zohľadňujúc špecifické požiadavky a bezpečnosť špeciálnej výroby.",
+            highlights: ["Optimálny návrh layoutu so zástavbou technológií, skladových zón a logistických trás.", "Kapacitné dimenzovanie výrobných zdrojov a personálu.", "Kvantifikácia medzioperačných plôch pre plynulý výrobný cyklus bez úzkych miest.", "Spracovanie technického generelu novej haly ako finálneho podkladu pre realizáciu."],
           },
           {
             name: "Detailne projektovanie výroby konštrukcii v oblasti defence",

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import PartnersBanner from "@/components/PartnersBanner";
 import Services from "@/components/Services";
 import Products from "@/components/Products";
+import LinkedInFeed from "@/components/LinkedInFeed";
 import References from "@/components/References";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
@@ -15,6 +16,7 @@ const Home = () => {
       <PartnersBanner />
       <Services />
       <Products />
+      <LinkedInFeed />
       <References />
       <About />
       <Footer />

@@ -157,6 +157,12 @@ export const en: SiteContent = {
     ],
   },
 
+  // ─── LinkedIn Feed ──────────────────────────────────────────
+  linkedInFeed: {
+    title: "Follow Us",
+    subtitle: "Latest posts from our LinkedIn profile",
+  },
+
   // ─── References ──────────────────────────────────────────────
   references: {
     title: "References",

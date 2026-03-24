@@ -86,6 +86,11 @@ export interface ReferencesContent {
   categories: ReferenceCategory[];
 }
 
+export interface LinkedInFeedContent {
+  title: string;
+  subtitle: string;
+}
+
 export interface ContactInfo {
   company: string;
   address: string;
@@ -159,6 +164,7 @@ export interface SiteContent {
   partners: PartnersContent;
   services: ServicesContent;
   products: ProductsContent;
+  linkedInFeed: LinkedInFeedContent;
   references: ReferencesContent;
   about: AboutContent;
   academia: AcademiaContent;

@@ -2,6 +2,7 @@ import { useContent } from "@/context/LanguageContext";
 import { useCallback } from "react";
 import { AnimatedTabs, TabsContent } from "@/components/AnimatedTabs";
 import { useInView } from "@/hooks/useInView";
+import { Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getIcon } from "@/lib/icons";
 import type { ReferenceProject } from "@/content/types";
@@ -18,7 +19,7 @@ const ProjectCard = ({ project, index }: { project: ReferenceProject; index: num
     <div
       onMouseMove={handleMouseMove}
       className={cn(
-        "bento-card relative rounded-2xl overflow-hidden",
+        "bento-card group relative rounded-2xl overflow-hidden",
         "border border-white/[0.06]",
         "transition-[border-color] duration-500 ease-out",
         "hover:border-primary/25",
@@ -26,9 +27,9 @@ const ProjectCard = ({ project, index }: { project: ReferenceProject; index: num
       )}
       style={{ animationDelay: `${index * 80}ms`, animationFillMode: "both" }}
     >
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
-        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 flex items-center gap-2.5">
+        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 flex items-center gap-2.5 group-hover:text-primary transition-colors duration-300">
           {(() => { const Icon = getIcon(project.icon); return Icon ? <Icon className="h-6 w-6 text-foreground flex-shrink-0" /> : null; })()}
           {project.name}
         </h3>
@@ -36,10 +37,11 @@ const ProjectCard = ({ project, index }: { project: ReferenceProject; index: num
           {project.description}
         </p>
         {project.highlights.length > 0 && (
-          <ul className="space-y-2 mt-auto">
+          <ul className="space-y-2.5 mt-auto">
             {project.highlights.map((h, i) => (
-              <li key={i} className="text-sm text-primary font-medium leading-relaxed">
-                {h}
+              <li key={i} className="flex items-start gap-3">
+                <Zap className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground/85 leading-relaxed">{h}</span>
               </li>
             ))}
           </ul>

@@ -2,7 +2,7 @@ import { useContent } from "@/context/LanguageContext";
 import { useState, useCallback } from "react";
 import { AnimatedTabs, TabsContent } from "@/components/AnimatedTabs";
 import { useInView } from "@/hooks/useInView";
-import { CheckCircle2 } from "lucide-react";
+import { Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getIcon } from "@/lib/icons";
 
@@ -62,18 +62,18 @@ const BentoCard = ({ title, icon, description, benefits, index, colSpan }: Bento
           {(() => { const Icon = getIcon(icon); return Icon ? <Icon className="h-5 w-5 text-foreground flex-shrink-0" /> : null; })()}
           {title}
         </h3>
-        <p className="text-sm md:text-base text-muted-foreground leading-relaxed flex-1">
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
           {description}
         </p>
         {benefits.length > 0 && benefits[0] !== "" && (
-          <div className="flex flex-wrap gap-2 pt-4 mt-auto">
+          <ul className="flex flex-col gap-2 pt-4 border-t border-white/[0.06]">
             {benefits.map((benefit, i) => (
-              <span key={i} className="inline-flex items-center gap-1.5 text-xs text-primary/90 bg-primary/5 border border-primary/10 rounded-lg px-2.5 py-1">
-                <CheckCircle2 className="h-3 w-3 flex-shrink-0" />
-                {benefit}
-              </span>
+              <li key={i} className="flex items-start gap-2">
+                <Zap className="h-3.5 w-3.5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground/85 leading-relaxed">{benefit}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
     </div>
