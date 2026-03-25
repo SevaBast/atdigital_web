@@ -127,7 +127,7 @@ export const sk: SiteContent = {
         id: "sw-planovanie-vyroby",
         name: "SW plánovanie výroby",
         icon: "CalendarClock",
-        media: { type: "video", src: "/atdigital_web/reference/examplevideo.mp4" },
+        media: { type: "video", src: "/atdigital_web/reference/plan-vyrob.mp4" },
         description: "Ponúkame vám aplikáciu pre komplexné plánovanie výrobných zákaziek s podporou MRP a rozkladu kusovníkov (BOM). Nástroj pokrýva celý cyklus od správy materiálu až po expedíciu a pomocou optimalizovaného Ganttovho diagramu s viacerými stratégiami plánovania zabezpečuje maximálnu efektivitu vašej výroby.",
         features: ["Plánovanie zákaziek: Automatické rozplánovanie výroby s ohľadom na termíny a priority.", "Správa materiálu: Prehľad skladových zásob, dostupnosti a materiálových požiadaviek", "Kusovník (BOM): Štruktúra produktu – čo a koľko treba vyrobiť pre každú zákazku", "Gantt diagram: Vizuálny prehľad rozvrhu výroby na strojoch v čase", "Správa strojov a pracovísk: Kapacity, vyťaženie, údržba a stav každého stroja", "Kompletizácia: Sledovanie dokončenosti jednotlivých komponentov a zákaziek", "Export do Excelu: Jednoduché zdieľanie plánov a reportov"],
       },
