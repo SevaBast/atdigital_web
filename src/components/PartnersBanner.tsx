@@ -23,9 +23,9 @@ const PartnersBanner = () => {
     title: logo.name,
   }));
 
-  // Shuffle independently for each row on every mount
-  const logosRow1 = useMemo(() => shuffle(logos), [logos]);
-  const logosRow2 = useMemo(() => shuffle(logos), [logos]);
+  // Split logos by index: even → row 1, odd → row 2 (auto-alternates when adding new logos)
+  const logosRow1 = useMemo(() => shuffle(logos.filter((_, i) => i % 2 === 0)), [logos]);
+  const logosRow2 = useMemo(() => shuffle(logos.filter((_, i) => i % 2 === 1)), [logos]);
 
   return (
     <section

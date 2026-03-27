@@ -83,6 +83,12 @@ const useAnimationLoop = (
   const offsetRef = useRef(0);
   const velocityRef = useRef(0);
 
+  // Use refs for values that change frequently to avoid restarting the animation loop
+  const isHoveredRef = useRef(isHovered);
+  isHoveredRef.current = isHovered;
+  const pauseOnHoverRef = useRef(pauseOnHover);
+  pauseOnHoverRef.current = pauseOnHover;
+
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -100,7 +106,7 @@ const useAnimationLoop = (
       const deltaTime = Math.max(0, timestamp - lastTimestampRef.current) / 1000;
       lastTimestampRef.current = timestamp;
 
-      const target = pauseOnHover && isHovered ? 0 : targetVelocity;
+      const target = pauseOnHoverRef.current && isHoveredRef.current ? 0 : targetVelocity;
 
       const easingFactor = 1 - Math.exp(-deltaTime / ANIMATION_CONFIG.SMOOTH_TAU);
       velocityRef.current += (target - velocityRef.current) * easingFactor;
@@ -126,7 +132,7 @@ const useAnimationLoop = (
       }
       lastTimestampRef.current = null;
     };
-  }, [targetVelocity, seqWidth, isHovered, pauseOnHover, trackRef]);
+  }, [targetVelocity, seqWidth, trackRef]);
 };
 
 interface LogoItem {
