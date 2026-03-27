@@ -58,7 +58,7 @@ export interface ProductCategory {
   icon: string;
   description: string;
   features: string[];
-  media: { type: "image" | "video"; src: string };
+  media: { type: "image" | "video" | "youtube"; src: string };
 }
 
 export interface ProductsContent {
@@ -69,7 +69,7 @@ export interface ProductsContent {
 
 export interface ReferenceProject {
   name: string;
-  icon: string;
+  icon?: string;
   description: string;
   highlights: string[];
 }

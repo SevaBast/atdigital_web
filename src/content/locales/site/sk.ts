@@ -119,7 +119,7 @@ export const sk: SiteContent = {
         id: "sw-skladove-hospodarstvo",
         name: "SW Skladové hospodárstvo",
         icon: "PackageSearch",
-        media: { type: "image", src: "/atdigital_web/picture/products/example.png" },
+        media: { type: "youtube", src: "ZK-rNEhJIDs" },
         description: "Riadenie zásob je webová aplikácia na komplexnú správu a optimalizáciu skladových zásob s podporou AI, automatických prognóz a prepojenia na externé systémy SQLite a Odoo. Ponúkame vám inteligentný nástroj na riadenie zásob, ktorý v reálnom čase analyzuje stav skladu, automaticky klasifikuje položky, predpovedá budúci dopyt a navrhuje konkrétne nákupné a optimalizačné akcie – všetko na jednom mieste.",
         features: ["Okamžitý obraz o zdraví skladu – výpadky, nadbytky, plnenie cieľov", "Automatické roztriedenie položiek podľa hodnoty a predvídateľnosti dopytu", "Predpoveď budúcej spotreby a detekcia sezónnosti či anomálií", "Výpočet optimálnych objednávacích množstiev, poistnej zásoby a nárazníkových hladín", "Prehľad položiek vyžadujúcich okamžitú akciu s nákupnými odporúčaniami", "Sledovanie jednotlivých komponentov a zákaziek v reálnom čase", "Jednoduché zdieľanie plánov a reportov"],
       },

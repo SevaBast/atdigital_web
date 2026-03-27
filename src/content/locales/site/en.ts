@@ -110,7 +110,7 @@ export const en: SiteContent = {
         id: "sw-skladove-hospodarstvo",
         name: "Warehouse Management SW",
         icon: "PackageSearch",
-        media: { type: "image", src: "/atdigital_web/picture/products/example.png" },
+        media: { type: "youtube", src: "ZK-rNEhJIDs" },
         description: "Inventory management is a web application for comprehensive management and optimization of warehouse stocks with AI support, automatic forecasting and integration with external systems SQLite and Odoo. We offer you an intelligent tool for inventory management that analyzes warehouse status in real time, automatically classifies items, predicts future demand and suggests specific purchasing and optimization actions — all in one place.",
         features: ["Overview & KPI: Instant picture of warehouse health — shortages, surpluses, goal fulfillment", "ABC / XYZ Analysis: Automatic item classification by value and demand predictability", "Forecast & Trends: Future consumption prediction and seasonality/anomaly detection", "Inventory optimization: Optimal order quantity, safety stock and buffer level calculation", "Action list & Purchasing: Overview of items requiring immediate action with purchase recommendations", "Supplier evaluation: Supplier reliability and performance analysis", "Import & Export: Data loading from Excel, SQLite or Odoo; HTML report export", "AI decision assistant: Automatic action and decision recommendations for each item"],
       },
@@ -174,13 +174,11 @@ export const en: SiteContent = {
         projects: [
           {
             name: "Assembly line design",
-            icon: "Factory",
             description: "Complete design and implementation of an assembly line for automotive components with Industry 4.0 technology.",
             highlights: ["Productivity increase by 32%", "Production error reduction by 45%", "Project area 15,000 m²"],
           },
           {
             name: "Production process robotization",
-            icon: "Shield",
             description: "Deployment of collaborative robots and visual inspection on an assembly line for brake system production.",
             highlights: ["6 collaborative robots", "100% visual inspection", "Takt time reduced by 28%"],
           },
@@ -192,13 +190,11 @@ export const en: SiteContent = {
         projects: [
           {
             name: "Warehouse & logistics optimization",
-            icon: "Package",
             description: "Redesign of warehouse processes with WMS system implementation and automated warehouse solutions.",
             highlights: ["Warehouse capacity +60%", "Order fulfillment time -55%", "Inventory accuracy 99.5%"],
           },
           {
             name: "Warehouse system automation",
-            icon: "Bot",
             description: "Implementation of an automated storage and retrieval system with integration to existing ERP.",
             highlights: ["Capacity 5,000 pallets", "Throughput +80%", "ROI in 24 months"],
           },
@@ -210,13 +206,11 @@ export const en: SiteContent = {
         projects: [
           {
             name: "AGV system for internal logistics",
-            icon: "Truck",
             description: "Implementation of an autonomous vehicle fleet for production line supply with a central control system.",
             highlights: ["12 AGV vehicles", "Supplying 8 lines", "Manual transport elimination"],
           },
           {
             name: "Material flow design",
-            icon: "GitBranch",
             description: "Comprehensive material flow design from raw material intake to finished product dispatch.",
             highlights: ["Transport distance reduction by 40%", "Bottleneck elimination", "Cost per m² -25%"],
           },
@@ -228,13 +222,11 @@ export const en: SiteContent = {
         projects: [
           {
             name: "Press shop digital twin",
-            icon: "Copy",
             description: "Creation of a digital twin of the pressing process with real-time monitoring and predictive maintenance.",
             highlights: ["24/7 real-time monitoring", "Predictive maintenance", "OEE increased to 89%"],
           },
           {
             name: "Lean manufacturing transformation",
-            icon: "Gauge",
             description: "Implementation of lean manufacturing principles to eliminate waste and increase process efficiency.",
             highlights: ["Energy savings 18%", "OEE increase by 15%", "Downtime reduction by 35%"],
           },
@@ -246,7 +238,6 @@ export const en: SiteContent = {
         projects: [
           {
             name: "3D production hall scanning",
-            icon: "ScanLine",
             description: "Complete laser surveying of production spaces for digital model creation and layout change planning.",
             highlights: ["Accuracy ±2 mm", "Area 25,000 m²", "Point cloud + BIM model"],
           },
@@ -258,13 +249,11 @@ export const en: SiteContent = {
         projects: [
           {
             name: "APS system implementation",
-            icon: "CalendarClock",
             description: "Deployment of an advanced planning system for production schedule and capacity optimization.",
             highlights: ["Deadline adherence +25%", "Machine utilization +18%", "ERP integration"],
           },
           {
             name: "Production plan visualization",
-            icon: "BarChart3",
             description: "Interactive Gantt chart with real-time production status updates and automatic rescheduling.",
             highlights: ["Real-time Gantt", "Automatic rescheduling", "Mobile access"],
           },

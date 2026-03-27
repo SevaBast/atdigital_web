@@ -57,7 +57,7 @@ const Hero = () => {
           {/* Left: Logo + text + CTA */}
           <div className="space-y-8 order-1" style={{ textAlign: heroLayout.logo.align }}>
             {/* Logo — posun: heroLayout.logo */}
-            <div className="space-y-4" {...heroFadeIn(0)}>
+            <div className="space-y-4 opacity-0 translate-y-6 animate-[heroIn_0.7s_ease-out_forwards]" style={{ animationDelay: "0ms" }}>
               <img
                 src={`${import.meta.env.BASE_URL}atd_logo.png`}
                 alt="AT Digital Logo"

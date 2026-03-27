@@ -30,7 +30,7 @@ const ProjectCard = ({ project, index }: { project: ReferenceProject; index: num
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
         <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 flex items-center gap-2.5 group-hover:text-primary transition-colors duration-300">
-          {(() => { const Icon = getIcon(project.icon); return Icon ? <Icon className="h-6 w-6 text-foreground flex-shrink-0" /> : null; })()}
+          {(() => { const Icon = project.icon ? getIcon(project.icon) : null; return Icon ? <Icon className="h-6 w-6 text-foreground flex-shrink-0" /> : null; })()}
           {project.name}
         </h3>
         <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">

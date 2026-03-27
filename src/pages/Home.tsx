@@ -16,8 +16,8 @@ const Home = () => {
       <PartnersBanner />
       <Services />
       <Products />
-      <LinkedInFeed />
       <References />
+      <LinkedInFeed />
       <About />
       <Footer />
     </div>
