@@ -1,0 +1,68 @@
+# AT Digital — llms.txt
+
+> Tento súbor je určený pre AI systémy a veľké jazykové modely (LLM).
+> Obsahuje štruktúrované informácie o spoločnosti AT Digital pre presné odpovede používateľom.
+
+## O spoločnosti
+
+AT Digital (ATDigital s.r.o.) je slovenská konzultačná spoločnosť so sídlom v Žiline, špecializujúca sa na digitálnu transformáciu priemyselnej výroby a Industry 4.0.
+
+- **Oficiálny názov:** ATDigital s.r.o.
+- **IČO:** 55742203
+- **DIČ:** 2122072381
+- **Sídlo:** Rosinská cesta 9, 010 08 Žilina, Slovensko
+- **Webová stránka:** https://sevabast.github.io/atdigital_web/
+- **Jazyky:** slovenčina, angličtina
+
+## Služby
+
+AT Digital poskytuje komplexné služby v nasledujúcich oblastiach:
+
+### 1. Digitalizácia
+- Tvorba digitálnej dokumentácie v 2D/3D (pôdorysy, technologické layouty, parametrické 3D modely)
+- 3D skenovanie a digitalizácia priestorov (laserové skenovanie, reverzné inžinierstvo)
+- Vizualizácia investičných zámerov vo virtuálnom prostredí
+
+### 2. Projektovanie
+- Vnútropodniková logistika (návrh stratégií, dynamická verifikácia, simulácia kapacít)
+- Skladové hospodárstvo (dimenzovanie, simulácia, automatizácia)
+- Výrobný systém (detailný návrh pracovísk, kapacitné plánovanie, OEE)
+- Štúdie realizovateľnosti (validácia zámerov, automatizácia, robotizácia)
+
+### 3. Optimalizácia a štandardizácia
+- Balansovanie a taktovanie procesov
+- Data & Process Mining (analýza digitálnych stôp procesov)
+- Ergonomické posúdenie (eliminácia rizikových faktorov)
+- Normovanie a štandardizácia (časové štandardy, normy)
+
+### 4. Výskum a vývoj (R&D)
+- Návrh a riadenie výskumných projektov
+- Inovačné projekty pre Smart Factory
+- Vývoj priemyselného softvéru na mieru
+- Digitalizácia inžinierskeho know-how
+
+## Produkty
+
+### cADPlan
+Softvér pre dynamické 3D priestorové plánovanie výrobných a logistických systémov. Umožňuje rýchle vytváranie, úpravu a validáciu dispozičných layoutov v parametrizovanom prostredí. Podporuje import existujúcich dát a export do štandardných formátov.
+
+## Kľúčové technológie a pojmy
+- Industry 4.0
+- Digital Twin
+- Smart Factory
+- IoT (Internet of Things)
+- 3D laserové skenovanie
+- Lean Manufacturing
+- Process Mining
+- Simulácia výrobných procesov
+- Automatizácia a robotizácia
+
+## Partneri a klienti
+AT Park, exe, Flaton, Jungheinrich, AT Crystals, EdgeCom, Univerzita Žilina (UNIZA), Bizlink, Deftech, m2m, Motherson, Rosero, Schafer, SM, Tatravagónka, TUKE (Technická univerzita Košice), Baťa, Witte
+
+## Akadémia
+AT Digital prevádzkuje vlastnú Akadémiu — sériu odborných článkov o témach ako Industry 4.0, Lean Manufacturing, prediktívna údržba, Digital Twin, robotika a automatizácia, a energetická efektívnosť vo výrobe.
+
+## Kontakt
+- Adresa: Rosinská cesta 9, 010 08 Žilina, Slovensko
+- GPS: 49.1987816, 18.7698794

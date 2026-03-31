@@ -62,6 +62,8 @@ const Hero = () => {
                 src={`${import.meta.env.BASE_URL}atd_logo.png`}
                 alt="AT Digital Logo"
                 className="w-full max-w-xl h-auto"
+                width={576}
+                height={120}
                 style={{
                   position: "relative",
                   top: heroLayout.logo.top,
@@ -167,6 +169,8 @@ const Hero = () => {
                   src={`${import.meta.env.BASE_URL}picture/hala_card.png`}
                   alt="Smart Factory — digitálna tovareň"
                   className="block rounded-xl w-full"
+                  width={600}
+                  height={400}
                   loading="eager"
                 />
               </div>

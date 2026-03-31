@@ -99,7 +99,7 @@ const Services = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary/70">
             {content.services.title}
           </h2>
           <p className="text-xl text-muted-foreground">{content.services.subtitle}</p>
@@ -113,7 +113,7 @@ const Services = () => {
         >
           {content.services.categories.map((category) => (
             <TabsContent key={category.id} value={category.id} className="animate-fade-in">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                 {category.services.map((service, index) => (
                   <BentoCard
                     key={`${category.id}-${index}`}

@@ -1,0 +1,121 @@
+# AT Digital — Detailed Information for AI Systems
+
+> llms-full.txt — Extended version with comprehensive details about AT Digital services, products, and expertise.
+
+## Company Overview
+
+**AT Digital (ATDigital s.r.o.)** is a Slovak digital consulting company headquartered in Žilina, Slovakia. The company specializes in digital transformation of industrial manufacturing, providing comprehensive solutions for Industry 4.0 adoption, process optimization, and smart factory implementation.
+
+The company works primarily with manufacturing enterprises in Central Europe, helping them modernize production processes through digitalization, advanced technologies, and strategic consulting.
+
+---
+
+## Detailed Service Portfolio
+
+### Digitalization Services
+
+**2D/3D Digital Documentation**
+Complete solutions for creating and updating digital documentation of manufacturing facilities. This includes updating floor plans to their actual state, creating technological layouts, and building parametric 3D models. These serve as reliable foundations for engineering processes, investment plans, and efficient change management. Key deliverables include accurate data foundations, collision detection capabilities, and change & layout management systems.
+
+**3D Scanning & Digitalization**
+Professional laser scanning services that provide digital foundations for innovation projects. The scanning eliminates inaccuracies when planning spatial changes in manufacturing facilities. Used for reverse engineering, creating digital copies of spaces, and providing precise measurements for facility planning.
+
+**Visualization**
+Creating virtual environment presentations of investment plans. This simplifies approval processes by giving stakeholders a clear picture of planned changes before the implementation phase. Includes renders of future operations and technological complexes, as well as marketing support for investment projects.
+
+### Engineering & Design
+
+**Intralogistics**
+Expert perspective on modernizing in-plant logistics, from strategy design to dynamic process verification. Services include production batch sizing and handling unit design, logistics process optimization and auditing, logistics automation concepts, logistics concept simulation and validation, logistics resource capacity planning, JIT supply strategy design, and digital logistics-production integration with RTLS system design and implementation.
+
+**Warehouse Management**
+Efficient warehouse management consulting, from inventory optimization and process improvement to implementation of modern technologies and control mechanisms. Includes warehouse capacity dimensioning and calculation, warehouse dynamics simulation, warehouse process validation via workshops, and warehouse expansion and development studies.
+
+**Production System Design**
+Comprehensive technical solutions and workplace design, including detailed workstation design with equipment specifications, layout planning, and utility connections. Services cover key production parameter optimization, solution validation and KPI definition, capacity planning and scheduling, and takt time and target OEE definition.
+
+**Feasibility Studies**
+External support for validating investment plans and gaining objective views of technical and economic feasibility. Covers implementation of new products into production, automation and robotization of processes, and development and expansion of production capacities.
+
+### Optimization & Standardization
+
+**Process Balancing & Takt Optimization**
+Optimal operation distribution on production lines ensures even workstation utilization and eliminates bottlenecks for smooth production flow. Focuses on removing bottlenecks, balancing workstations for even utilization, and ensuring flow continuity without unnecessary downtime.
+
+**Data & Process Mining**
+In-depth analysis of digital footprints from manufacturing processes to reveal actual flow of production and logistics. Identifies deviations from ideal state and proposes data-driven solutions. Reveals process deviations, provides insights into actual process states, and identifies hidden defects and inefficient steps.
+
+**Ergonomic Assessment**
+Identification and elimination of risk factors in employee movement patterns. Reduces fatigue, error rates, and improves long-term performance sustainability through analysis and correction of improper movements.
+
+**Standardization & Time Studies**
+Defining exact time standards for new products and existing production. These data foundations enable subsequent process optimization or workstation robotization. Includes standard definition, improved planning, and time norm creation.
+
+### Research & Development
+
+**Research Project Design & Management**
+Comprehensive coverage of innovation projects in digitalization and Smart Factory, from initial feasibility studies to methodology design and technical implementation.
+
+**Innovation & Research Projects**
+Partnership for developing methodologies and technical solutions for digital transformation that push boundaries of current production toward Smart Factory.
+
+**Custom Industrial Software Development**
+Development of specific applications that solve unique challenges in manufacturing and logistics — from engineering configurators to process analysis tools.
+
+**Engineering Know-how Digitalization**
+Transformation of internal expert knowledge into software algorithms, ensuring standardization and automation of complex decision-making tasks.
+
+---
+
+## Products
+
+### cADPlan
+A software solution for dynamic 3D spatial planning of production and logistics systems. Key capabilities:
+- Real-time visualization with optimized rendering
+- Drag-and-drop interface for quick layout creation
+- Parametric 3D models for flexible modifications
+- Collision detection and validation
+- Import support for existing data (CAD, point clouds)
+- Export to standard formats
+- Capacity calculations and flow optimization
+
+---
+
+## Reference Projects
+
+AT Digital has completed projects across multiple sectors:
+
+**Automotive:** Layout design and logistics optimization for automotive component manufacturers, including projects with SSI Schaefer for production line relocation, lean supply circuit design, logistics simulation, and OPEX minimization.
+
+**Defense:** Detailed production design for defense construction facilities, including spatial disposition of new halls, workstation design, capacity calculations, and technical specifications for specialized production requirements.
+
+**Warehouse:** Complex area development strategies focused on bottleneck analysis, flow optimization, capacity planning, and software development for intelligent inventory management (project UTools).
+
+**Manufacturing:** Production planning, laser scanning, and process improvement projects for companies including Jungheinrich, Bizlink, Incosystems, and Schaefermenk.
+
+---
+
+## Academic Content (Academy)
+
+AT Digital publishes expert articles on:
+1. **Introduction to Industry 4.0** — Fundamental principles, key technologies (IoT, Big Data, Cloud, CPS, AI/ML), benefits, and implementation challenges
+2. **Lean Manufacturing in Practice** — Practical implementation of Lean methodologies with case studies and measurable results
+3. **Predictive Maintenance** — IoT-based predictive maintenance systems for manufacturing
+4. **Digital Twin Guide** — Creation and implementation of Digital Twin technology
+5. **Robotics & Automation** — Modern robotics and automation solutions for manufacturing
+6. **Energy Efficiency** — Strategies for reducing energy consumption in industrial production
+
+---
+
+## Technical Details
+
+- **Company:** ATDigital s.r.o.
+- **ICO (Company ID):** 55742203
+- **DIC (Tax ID):** 2122072381
+- **Address:** Rosinská cesta 9, 010 08 Žilina, Slovakia
+- **GPS Coordinates:** 49.1987816°N, 18.7698794°E
+- **Website:** https://sevabast.github.io/atdigital_web/
+- **Languages:** Slovak, English
+
+## Partners & Clients
+AT Park, exe, Flaton, Jungheinrich, AT Crystals, EdgeCom, University of Žilina (UNIZA), Bizlink, Deftech, m2m, Motherson, Rosero, Schafer, SM, Tatravagónka, TUKE (Technical University of Košice), Baťa, Witte

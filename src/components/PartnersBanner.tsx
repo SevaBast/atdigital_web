@@ -30,7 +30,7 @@ const PartnersBanner = () => {
   return (
     <section
       ref={ref}
-      className={`relative py-12 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      className={`relative py-8 md:py-12 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
       {/* Gradient blur overlay at top for smooth transition from Hero */}
       {partnersConfig.section.topGradient.enabled && (

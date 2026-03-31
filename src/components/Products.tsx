@@ -22,7 +22,7 @@ const Products = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary/70">
             {content.products.title}
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -96,6 +96,7 @@ const Products = () => {
                       src={category.media.src}
                       alt={category.name}
                       className="w-full"
+                      loading="lazy"
                     />
                   )}
                 </div>

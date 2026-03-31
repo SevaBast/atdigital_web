@@ -154,6 +154,16 @@ export default {
             transform: "translateY(0)"
           }
         },
+        "fadeNode": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.5)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -165,6 +175,7 @@ export default {
         "bento-in": "bento-in 0.5s ease-out",
         "slide-from-right": "slide-from-right 0.4s ease-out both",
         "slide-from-left": "slide-from-left 0.4s ease-out both",
+        "fade-node": "fadeNode 0.5s ease-out forwards",
       },
     },
   },

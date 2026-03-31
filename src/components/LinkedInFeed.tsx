@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useContent } from "@/context/LanguageContext";
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
@@ -8,14 +8,20 @@ const ELFSIGHT_APP_ID = "aea6f93c-66cb-4add-8abd-fb27f53420de";
 const LinkedInFeed = () => {
   const content = useContent();
   const { ref, isInView } = useInView();
+  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
-    if (document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) return;
+    if (!isInView || scriptLoaded) return;
+    if (document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) {
+      setScriptLoaded(true);
+      return;
+    }
     const script = document.createElement("script");
     script.src = "https://elfsightcdn.com/platform.js";
     script.async = true;
+    script.onload = () => setScriptLoaded(true);
     document.body.appendChild(script);
-  }, []);
+  }, [isInView, scriptLoaded]);
 
   return (
     <section className="py-24 relative bg-background-elevated/30">
@@ -27,7 +33,7 @@ const LinkedInFeed = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary/70">
             {content.linkedInFeed.title}
           </h2>
           <p className="text-xl text-muted-foreground">

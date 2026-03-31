@@ -68,7 +68,7 @@ const References = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary/70">
             {content.references.title}
           </h2>
           <p className="text-xl text-muted-foreground">

@@ -92,7 +92,7 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-7 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-        isScrolled ? "w-[90%] max-w-7xl" : "md:w-[50%] w-[90%] max-w-6xl"
+        isScrolled ? "w-[90%] max-w-7xl" : "xl:w-[50%] w-[90%] max-w-6xl"
       }`}
     >
       <div
@@ -118,12 +118,14 @@ const Navigation = () => {
               src={`${import.meta.env.BASE_URL}atd_logo_mini.png`}
               alt="AT Digital" 
               className="h-8 w-auto"
+              width={120}
+              height={32}
               style={{ filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6))' }}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-8">
             {content.navigation.links.map((link) => {
               const isActive = activeSection === link.href;
               return link.href.startsWith("#") ? (
@@ -185,7 +187,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile: Lang + Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 xl:hidden">
             <div ref={mobileLangRef} className="relative">
               <button
                 onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
@@ -215,6 +217,7 @@ const Navigation = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-foreground"
+              aria-label={isMobileMenuOpen ? "Zavrieť menu" : "Otvoriť menu"}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -223,7 +226,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-border/30 space-y-4">
+          <div className="xl:hidden mt-4 pt-4 border-t border-border/30 space-y-4">
             {content.navigation.links.map((link) => {
               const isActive = activeSection === link.href;
               return link.href.startsWith("#") ? (

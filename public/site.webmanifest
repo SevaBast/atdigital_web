@@ -1,0 +1,22 @@
+{
+  "name": "AT Digital",
+  "short_name": "ATDigital",
+  "description": "Inovatívne riešenia pre modernú priemyselnú výrobu — digitalizácia, Industry 4.0, 3D skenovanie, optimalizácia procesov.",
+  "start_url": "/atdigital_web/",
+  "scope": "/atdigital_web/",
+  "display": "standalone",
+  "background_color": "#0c1117",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/atdigital_web/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/atdigital_web/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import PartnersBanner from "@/components/PartnersBanner";
+import CircuitBanner from "@/components/CircuitBanner";
 import Services from "@/components/Services";
 import Products from "@/components/Products";
 import LinkedInFeed from "@/components/LinkedInFeed";
@@ -14,6 +15,7 @@ const Home = () => {
       <Navigation />
       <Hero />
       <PartnersBanner />
+      <CircuitBanner />
       <Services />
       <Products />
       <References />

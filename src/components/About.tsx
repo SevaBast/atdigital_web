@@ -83,7 +83,7 @@ const About = () => {
         className={`container mx-auto px-4 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary/70">
             {content.about.title}
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -154,6 +154,7 @@ const About = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                     className="glass border-border/30"
+                    aria-label={content.about.form.fields.name}
                   />
                   <Input
                     type="email"
@@ -162,6 +163,7 @@ const About = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     className="glass border-border/30"
+                    aria-label={content.about.form.fields.email}
                   />
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -171,12 +173,14 @@ const About = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="glass border-border/30"
+                    aria-label={content.about.form.fields.phone}
                   />
                   <Input
                     placeholder={content.about.form.fields.company}
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="glass border-border/30"
+                    aria-label={content.about.form.fields.company}
                   />
                 </div>
                 <Textarea
@@ -186,6 +190,7 @@ const About = () => {
                   required
                   rows={4}
                   className="glass border-border/30 resize-none"
+                  aria-label={content.about.form.fields.message}
                 />
 
                 {/* Simple Math CAPTCHA */}
@@ -200,6 +205,7 @@ const About = () => {
                     onChange={(e) => setCaptchaInput(e.target.value)}
                     required
                     className="glass border-border/30 w-20"
+                    aria-label={content.about.form.captchaLabel}
                   />
                 </div>
 
@@ -231,6 +237,7 @@ const About = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="AT Digital - mapa sídla spoločnosti"
           />
         </div>
       </div>

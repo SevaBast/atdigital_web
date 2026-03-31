@@ -1,0 +1,471 @@
+- generic [ref=e2]:
+  - region "Notifications alt+T"
+  - generic [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e7]:
+        - link "AT Digital" [ref=e600] [cursor=pointer]:
+          - /url: /atdigital_web
+          - img "AT Digital" [ref=e601]
+        - generic [ref=e8]:
+          - button "Domov" [ref=e9] [cursor=pointer]: Domov
+          - button "Služby" [ref=e11] [cursor=pointer]: Služby
+          - button "Produkty" [ref=e12] [cursor=pointer]: Produkty
+          - button "Referencie" [ref=e13] [cursor=pointer]: Referencie
+          - button "O nás" [ref=e14] [cursor=pointer]: O nás
+          - link "Akadémia" [ref=e15] [cursor=pointer]:
+            - /url: /atdigital_web/academia
+            - text: Akadémia
+          - button "sk" [ref=e17] [cursor=pointer]:
+            - img [ref=e18]
+            - generic [ref=e21]: sk
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - img "AT Digital Logo" [ref=e27]
+          - paragraph [ref=e28]: Inovatívne riešenia pre modernú priemyselnú výrobu
+        - paragraph [ref=e29]: Transformujeme výrobné procesy pomocou digitalizácie, pokročilých technológií a strategického poradenstva.
+        - generic [ref=e30]:
+          - button "Naše služby" [ref=e31] [cursor=pointer]:
+            - text: Naše služby
+            - img
+          - link "Akadémia" [ref=e32] [cursor=pointer]:
+            - /url: /atdigital_web/academia
+            - img
+            - text: Akadémia
+      - generic [ref=e34]:
+        - img "Smart Factory — digitálna tovareň" [ref=e37]
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - text: Digitalizácia výroby
+          - generic [ref=e45]:
+            - img [ref=e46]
+            - text: 3D skenovanie
+          - generic [ref=e49]:
+            - img [ref=e50]
+            - text: Priemysel 4.0
+          - generic [ref=e53]:
+            - img [ref=e54]
+            - text: Optimalizácia procesov
+          - generic [ref=e57]:
+            - img [ref=e58]
+            - text: Smart Factory
+    - generic [ref=e65]:
+      - heading "Dôverujú nám" [level=3] [ref=e67]
+      - generic [ref=e68]:
+        - region "Partner logos" [ref=e69]:
+          - generic [ref=e70]:
+            - list [ref=e71]:
+              - listitem [ref=e72]:
+                - img "Tatravakonka"
+              - listitem [ref=e73]:
+                - img "University of Žilina"
+              - listitem [ref=e74]:
+                - img "Bata"
+              - listitem [ref=e75]:
+                - img "Motherson"
+              - listitem [ref=e76]:
+                - img "AT Park"
+              - listitem [ref=e77]:
+                - img "Deftech"
+              - listitem [ref=e78]:
+                - img "Flaton"
+              - listitem [ref=e79]:
+                - img "Schafer"
+              - listitem [ref=e80]:
+                - img "AT Crystals"
+            - list [ref=e81]:
+              - listitem [ref=e82]:
+                - img
+              - listitem [ref=e83]:
+                - img
+              - listitem [ref=e84]:
+                - img
+              - listitem [ref=e85]:
+                - img
+              - listitem [ref=e86]:
+                - img
+              - listitem [ref=e87]:
+                - img
+              - listitem [ref=e88]:
+                - img
+              - listitem [ref=e89]:
+                - img
+              - listitem [ref=e90]:
+                - img
+            - list [ref=e91]:
+              - listitem [ref=e92]:
+                - img
+              - listitem [ref=e93]:
+                - img
+              - listitem [ref=e94]:
+                - img
+              - listitem [ref=e95]:
+                - img
+              - listitem [ref=e96]:
+                - img
+              - listitem [ref=e97]:
+                - img
+              - listitem [ref=e98]:
+                - img
+              - listitem [ref=e99]:
+                - img
+              - listitem [ref=e100]:
+                - img
+        - region "Partner logos" [ref=e101]:
+          - generic [ref=e102]:
+            - list [ref=e103]:
+              - listitem [ref=e104]:
+                - img "Bizlink"
+              - listitem [ref=e105]:
+                - img "m2m"
+              - listitem [ref=e106]:
+                - img "SM"
+              - listitem [ref=e107]:
+                - img "EdgeCom"
+              - listitem [ref=e108]:
+                - img "Tuke"
+              - listitem [ref=e109]:
+                - img "Witte"
+              - listitem [ref=e110]:
+                - img "Jungheinrich"
+              - listitem [ref=e111]:
+                - img "Rosero"
+              - listitem [ref=e112]:
+                - img "exe"
+            - list [ref=e113]:
+              - listitem [ref=e114]:
+                - img
+              - listitem [ref=e115]:
+                - img
+              - listitem [ref=e116]:
+                - img
+              - listitem [ref=e117]:
+                - img
+              - listitem [ref=e118]:
+                - img
+              - listitem [ref=e119]:
+                - img
+              - listitem [ref=e120]:
+                - img
+              - listitem [ref=e121]:
+                - img
+              - listitem [ref=e122]:
+                - img
+            - list [ref=e123]:
+              - listitem [ref=e124]:
+                - img
+              - listitem [ref=e125]:
+                - img
+              - listitem [ref=e126]:
+                - img
+              - listitem [ref=e127]:
+                - img
+              - listitem [ref=e128]:
+                - img
+              - listitem [ref=e129]:
+                - img
+              - listitem [ref=e130]:
+                - img
+              - listitem [ref=e131]:
+                - img
+              - listitem [ref=e132]:
+                - img
+    - img [ref=e135]:
+      - generic [ref=e244]: IoT
+      - generic [ref=e249]: 3D Scanning
+      - generic [ref=e254]: Digital Twin
+      - generic [ref=e259]: AI / ML
+      - generic [ref=e264]: Intralogistics
+      - generic [ref=e269]: Smart Factory
+      - generic [ref=e274]: Simulation
+      - generic [ref=e279]: Analytics
+      - generic [ref=e284]: RTLS
+      - generic [ref=e289]: Automation
+      - generic [ref=e294]: Lean
+    - generic [ref=e298]:
+      - generic [ref=e299]:
+        - heading "Naše služby" [level=2] [ref=e300]
+        - paragraph [ref=e301]: Komplexné riešenia pre vašu digitálnu transformáciu
+      - generic [ref=e302]:
+        - tablist [ref=e303]:
+          - tab "Digitalizácia" [selected] [ref=e304] [cursor=pointer]
+          - tab "Projektovanie" [ref=e305] [cursor=pointer]
+          - tab "Optimalizácia a štandardizácia" [ref=e306] [cursor=pointer]
+          - tab "R&D" [ref=e307] [cursor=pointer]
+        - tabpanel "Digitalizácia" [active] [ref=e308]:
+          - generic [ref=e309]:
+            - generic [ref=e312]:
+              - heading "Tvorba digitálnej dokumentácie v 2D/3D" [level=3] [ref=e313]:
+                - img [ref=e314]
+                - text: Tvorba digitálnej dokumentácie v 2D/3D
+              - paragraph [ref=e317]: Vypracujeme kompletné riešenie od aktualizácie pôdorysov do skutočného stavu cez tvorbu technologických layoutov až po parametrické 3D modely. Získate tak spoľahlivý podklad pre inžinierske procesy, investičné zámery a efektívny manažment zmien.
+              - list [ref=e318]:
+                - listitem [ref=e319]:
+                  - img [ref=e320]
+                  - generic [ref=e322]: Presný dátový základ
+                - listitem [ref=e323]:
+                  - img [ref=e324]
+                  - generic [ref=e326]: Detekcia kolízií
+                - listitem [ref=e327]:
+                  - img [ref=e328]
+                  - generic [ref=e330]: Manažment zmien a dispozícií
+            - generic [ref=e333]:
+              - heading "Vizualizácia" [level=3] [ref=e334]:
+                - img [ref=e335]
+                - text: Vizualizácia
+              - paragraph [ref=e338]: Prezentujte vaše investičné zámery v virtuálnom prostredí, čím uľahčíte schvaľovacie procesy a získate jasnú predstavu ešte pred fázou realizácie.
+              - list [ref=e339]:
+                - listitem [ref=e340]:
+                  - img [ref=e341]
+                  - generic [ref=e343]: Rendery budúcich prevádzok a technologických celkov
+                - listitem [ref=e344]:
+                  - img [ref=e345]
+                  - generic [ref=e347]: Marketingová podpora investičných projektov
+            - generic [ref=e350]:
+              - heading "3D skenovanie a digitalizácia" [level=3] [ref=e351]:
+                - img [ref=e352]
+                - text: 3D skenovanie a digitalizácia
+              - paragraph [ref=e357]: Získajte digitálny základ pre vaše inovačné zámery prostredníctvom laserového skenovania, ktoré eliminuje nepresnosti pri plánovaní zmien v priestore.
+              - list [ref=e358]:
+                - listitem [ref=e359]:
+                  - img [ref=e360]
+                  - generic [ref=e362]: Podklad pre reverzne inžinierstvo
+                - listitem [ref=e363]:
+                  - img [ref=e364]
+                  - generic [ref=e366]: Digitálna kópia priestoru
+    - generic [ref=e368]:
+      - generic [ref=e369]:
+        - heading "Naše produkty" [level=2] [ref=e370]
+        - paragraph [ref=e371]: Inovatívne technológie pre moderný podnik
+      - generic [ref=e372]:
+        - tablist [ref=e373]:
+          - tab "SW Skladové hospodárstvo" [selected] [ref=e374] [cursor=pointer]
+          - tab "SW plánovanie výroby" [ref=e375] [cursor=pointer]
+          - tab "Digital Twin" [ref=e376] [cursor=pointer]
+          - tab "Smart senzorické systémy" [ref=e377] [cursor=pointer]
+          - tab "VR & AR" [ref=e378] [cursor=pointer]
+          - tab "PlugFlow" [ref=e379] [cursor=pointer]
+        - tabpanel "SW Skladové hospodárstvo" [ref=e380]:
+          - generic [ref=e381]:
+            - generic [ref=e384]:
+              - heading "SW Skladové hospodárstvo" [level=3] [ref=e385]:
+                - img [ref=e386]
+                - text: SW Skladové hospodárstvo
+              - paragraph [ref=e392]: Riadenie zásob je webová aplikácia na komplexnú správu a optimalizáciu skladových zásob s podporou AI, automatických prognóz a prepojenia na externé systémy SQLite a Odoo. Ponúkame vám inteligentný nástroj na riadenie zásob, ktorý v reálnom čase analyzuje stav skladu, automaticky klasifikuje položky, predpovedá budúci dopyt a navrhuje konkrétne nákupné a optimalizačné akcie – všetko na jednom mieste.
+              - list [ref=e393]:
+                - listitem [ref=e394]:
+                  - img [ref=e395]
+                  - generic [ref=e397]: Okamžitý obraz o zdraví skladu – výpadky, nadbytky, plnenie cieľov
+                - listitem [ref=e398]:
+                  - img [ref=e399]
+                  - generic [ref=e401]: Automatické roztriedenie položiek podľa hodnoty a predvídateľnosti dopytu
+                - listitem [ref=e402]:
+                  - img [ref=e403]
+                  - generic [ref=e405]: Predpoveď budúcej spotreby a detekcia sezónnosti či anomálií
+                - listitem [ref=e406]:
+                  - img [ref=e407]
+                  - generic [ref=e409]: Výpočet optimálnych objednávacích množstiev, poistnej zásoby a nárazníkových hladín
+                - listitem [ref=e410]:
+                  - img [ref=e411]
+                  - generic [ref=e413]: Prehľad položiek vyžadujúcich okamžitú akciu s nákupnými odporúčaniami
+                - listitem [ref=e414]:
+                  - img [ref=e415]
+                  - generic [ref=e417]: Sledovanie jednotlivých komponentov a zákaziek v reálnom čase
+                - listitem [ref=e418]:
+                  - img [ref=e419]
+                  - generic [ref=e421]: Jednoduché zdieľanie plánov a reportov
+            - iframe [ref=e424]:
+              - generic [active] [ref=f25e1]:
+                - generic "Prehrávač videí na YouTube" [ref=f25e3]
+                - generic [ref=f25e5]:
+                  - generic:
+                    - generic:
+                      - button "Prehrať video" [ref=f25e10] [cursor=pointer]:
+                        - generic [ref=f25e54]:
+                          - img
+                      - button "Skryť ovládanie prehrávača" [ref=f25e12] [cursor=pointer]
+                      - generic [ref=f25e14]:
+                        - generic [ref=f25e19]:
+                          - generic [ref=f25e20]:
+                            - link "Product Demo Video | SaaS Explainer Video | Infinity" [ref=f25e21] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=ZK-rNEhJIDs
+                            - link "What a Story | SaaS & AI Product Video Experts" [ref=f25e22] [cursor=pointer]:
+                              - /url: /channel/UCVSKgOBZcsWZCkUb9Ajdwjw
+                              - generic [ref=f25e23]: What a Story | SaaS & AI Product Video Experts
+                          - generic [ref=f25e24]:
+                            - button "thumbnail-image" [ref=f25e55] [cursor=pointer]:
+                              - img "thumbnail-image" [ref=f25e56]
+                            - generic [ref=f25e27]:
+                              - generic: What a Story | SaaS & AI Product Video Experts
+                              - generic: 20 tis. odberateľov
+                        - generic [ref=f25e28]:
+                          - button "Skopírovať odkaz" [ref=f25e31] [cursor=pointer]:
+                            - generic [ref=f25e35]:
+                              - img
+                          - link "Prehrať na YouTube" [ref=f25e42] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=ZK-rNEhJIDs
+                            - generic [ref=f25e45]:
+                              - text: Prehrať na
+                              - img [ref=f25e47]:
+                                - generic [ref=f25e49]:
+                                  - img
+    - generic [ref=e426]:
+      - generic [ref=e427]:
+        - heading "Referencie" [level=2] [ref=e428]
+        - paragraph [ref=e429]: Úspešne realizované projekty
+      - generic [ref=e430]:
+        - tablist [ref=e431]:
+          - tab "Projektovanie výrobných systémov" [selected] [ref=e432] [cursor=pointer]
+          - tab "Skladové hospodárstvo" [ref=e433] [cursor=pointer]
+          - tab "Návrh logistického konceptu" [ref=e434] [cursor=pointer]
+          - tab "Zlepšenie procesu výroby" [ref=e435] [cursor=pointer]
+          - tab "Laserové skenovanie" [ref=e436] [cursor=pointer]
+          - tab "Plánovanie výroby" [ref=e437] [cursor=pointer]
+        - tabpanel "Projektovanie výrobných systémov" [ref=e438]:
+          - generic [ref=e439]:
+            - generic [ref=e442]:
+              - heading "Transformácia závodu pre výrobu nového produktu v skupine Tatravagonka" [level=3] [ref=e443]
+              - paragraph [ref=e444]: Návrh komplexného výrobno-logistického konceptu pre integráciu nového typu výroby do existujúcich priestorov.
+              - list [ref=e445]:
+                - listitem [ref=e446]:
+                  - img [ref=e447]
+                  - generic [ref=e449]: Digitalizácia priestorov pomocou laserového skenovania pre elimináciu kolízií pri zástavbe technológií
+                - listitem [ref=e450]:
+                  - img [ref=e451]
+                  - generic [ref=e453]: Dynamické preverenie kapacít pre presný výpočet potrebných výrobných a logistických síl.
+                - listitem [ref=e454]:
+                  - img [ref=e455]
+                  - generic [ref=e457]: Optimalizácia investície odborným porovnaním variantov manuálnej a automatizovanej výroby.
+                - listitem [ref=e458]:
+                  - img [ref=e459]
+                  - generic [ref=e461]: Garantovaný ročný výkon celého systému vďaka presne navrhnutým výrobným sekvenciám.
+                - listitem [ref=e462]:
+                  - img [ref=e463]
+                  - generic [ref=e465]: Kompletný realizačný podklad vo forme 3D prehliadky a harmonogramu implementácie.
+            - generic [ref=e468]:
+              - heading "Detailne projektovanie výroby konštrukcii v oblasti defence" [level=3] [ref=e469]
+              - paragraph [ref=e470]: Realizácia priestorovej dispozície novej haly a detailý návrh pracovísk pre segment defence. Kapacitné prepočty a dátová validácia procesov definovali presné umiestnenie technologických uzlov v parametrizovanom layoute, ktorého výstupom bolo technické zadanie pre zástavbu technológií zohľadňujúc špecifické požiadavky a bezpečnosť špeciálnej výroby.
+              - list [ref=e471]:
+                - listitem [ref=e472]:
+                  - img [ref=e473]
+                  - generic [ref=e475]: Optimálny návrh layoutu so zástavbou technológií, skladových zón a logistických trás.
+                - listitem [ref=e476]:
+                  - img [ref=e477]
+                  - generic [ref=e479]: Kapacitné dimenzovanie výrobných zdrojov a personálu.
+                - listitem [ref=e480]:
+                  - img [ref=e481]
+                  - generic [ref=e483]: Kvantifikácia medzioperačných plôch pre plynulý výrobný cyklus bez úzkych miest.
+                - listitem [ref=e484]:
+                  - img [ref=e485]
+                  - generic [ref=e487]: Spracovanie technického generelu novej haly ako finálneho podkladu pre realizáciu.
+            - generic [ref=e490]:
+              - heading "Detailne projektovanie výroby konštrukcii v oblasti defence" [level=3] [ref=e491]
+              - paragraph [ref=e492]: Realizácia priestorovej dispozície novej haly a detailý návrh pracovísk pre segment defence. Kapacitné prepočty a dátová validácia procesov definovali presné umiestnenie technologických uzlov v parametrizovanom layoute, ktorého výstupom bolo technické zadanie pre zástavbu technológií zohľadňujúc špecifické požiadavky a bezpečnosť špeciálnej výroby.
+              - list [ref=e493]:
+                - listitem [ref=e494]:
+                  - img [ref=e495]
+                  - generic [ref=e497]: Optimálny návrh layoutu so zástavbou technológií, skladových zón a logistických trás.
+                - listitem [ref=e498]:
+                  - img [ref=e499]
+                  - generic [ref=e501]: Kapacitné dimenzovanie výrobných zdrojov a personálu.
+                - listitem [ref=e502]:
+                  - img [ref=e503]
+                  - generic [ref=e505]: Kvantifikácia medzioperačných plôch pre plynulý výrobný cyklus bez úzkych miest.
+                - listitem [ref=e506]:
+                  - img [ref=e507]
+                  - generic [ref=e509]: Spracovanie technického generelu novej haly ako finálneho podkladu pre realizáciu.
+            - generic [ref=e512]:
+              - heading "Detailne projektovanie výroby konštrukcii v oblasti defence" [level=3] [ref=e513]
+              - paragraph [ref=e514]: Realizácia priestorovej dispozície novej haly a detailý návrh pracovísk pre segment defence. Kapacitné prepočty a dátová validácia procesov definovali presné umiestnenie technologických uzlov v parametrizovanom layoute, ktorého výstupom bolo technické zadanie pre zástavbu technológií zohľadňujúc špecifické požiadavky a bezpečnosť špeciálnej výroby.
+              - list [ref=e515]:
+                - listitem [ref=e516]:
+                  - img [ref=e517]
+                  - generic [ref=e519]: Optimálny návrh layoutu so zástavbou technológií, skladových zón a logistických trás.
+                - listitem [ref=e520]:
+                  - img [ref=e521]
+                  - generic [ref=e523]: Kapacitné dimenzovanie výrobných zdrojov a personálu.
+                - listitem [ref=e524]:
+                  - img [ref=e525]
+                  - generic [ref=e527]: Kvantifikácia medzioperačných plôch pre plynulý výrobný cyklus bez úzkych miest.
+                - listitem [ref=e528]:
+                  - img [ref=e529]
+                  - generic [ref=e531]: Spracovanie technického generelu novej haly ako finálneho podkladu pre realizáciu.
+    - generic [ref=e534]:
+      - heading "Sledujte nás" [level=2] [ref=e535]
+      - paragraph [ref=e536]: Najnovšie príspevky z nášho LinkedIn profilu
+    - generic [ref=e538]:
+      - generic [ref=e539]:
+        - heading "O nás" [level=2] [ref=e540]
+        - paragraph [ref=e541]: Váš partner pre digitálnu transformáciu
+      - generic [ref=e543]:
+        - generic [ref=e544]:
+          - heading "Kontaktné informácie" [level=3] [ref=e545]
+          - generic [ref=e546]:
+            - generic [ref=e547]:
+              - img [ref=e548]
+              - generic [ref=e552]:
+                - paragraph [ref=e553]: ATDigital s.r.o.
+                - paragraph [ref=e554]: "IČO: 55742203"
+                - paragraph [ref=e555]: "DIČ: 2122072381"
+            - generic [ref=e556]:
+              - img [ref=e557]
+              - paragraph [ref=e560]: Rosinská cesta 9 010 08 Žilina
+            - generic [ref=e561]:
+              - img [ref=e562]
+              - link "+421 2 1234 5678" [ref=e564] [cursor=pointer]:
+                - /url: tel:+421 2 1234 5678
+            - generic [ref=e565]:
+              - img [ref=e566]
+              - link "emailexample@gmail.com" [ref=e569] [cursor=pointer]:
+                - /url: mailto:emailexample@gmail.com
+        - generic [ref=e571]:
+          - heading "Kontaktujte nás" [level=3] [ref=e572]
+          - generic [ref=e573]:
+            - generic [ref=e574]:
+              - textbox "Meno a priezvisko" [ref=e575]
+              - textbox "E-mail" [ref=e576]
+            - generic [ref=e577]:
+              - textbox "Telefón" [ref=e578]
+              - textbox "Spoločnosť" [ref=e579]
+            - textbox "Správa" [ref=e580]
+            - generic [ref=e581]:
+              - img [ref=e582]
+              - generic [ref=e585]: "Bezpečnostná otázka: 5 + 6 ="
+              - spinbutton "Bezpečnostná otázka" [ref=e586]
+            - button "Odoslať správu" [ref=e587] [cursor=pointer]:
+              - img
+              - text: Odoslať správu
+      - iframe [ref=e589]:
+        - generic [active] [ref=f26e1]:
+          - generic [ref=f26e3]:
+            - generic:
+              - button "Klávesové skratky"
+            - region "Mapa" [ref=f26e4]
+            - generic [ref=f26e5]:
+              - iframe [ref=f26e45]:
+                
+              - button "Ovládať kameru na mape" [ref=f26e97] [cursor=pointer]
+              - button "Zobraziť satelitné snímky" [ref=f26e50] [cursor=pointer]:
+                - generic [ref=f26e54]:
+                  - region [ref=f26e55]
+                  - iframe [ref=f26e61]:
+                    
+              - img "Google" [ref=f26e63]
+              - generic [ref=f26e64]:
+                - button "Klávesové skratky" [ref=f26e70] [cursor=pointer]
+                - generic [ref=f26e75]: Údaje máp ©2026
+                - link "Podmienky (otvorí sa na novej karte)" [ref=f26e80] [cursor=pointer]:
+                  - /url: https://www.google.com/intl/sk_SK/help/terms_maps.html
+                  - text: Podmienky
+                - link "Nahlásiť chybu mapy" [ref=f26e85] [cursor=pointer]:
+                  - /url: https://www.google.com/maps/@49.1987816,18.7698794,16z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+          - link "Vyhľadať trasu (otvorí sa na novej karte)" [ref=f26e90] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x47145995c4b7663f:0xb13c387934e1c7e!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAEYASAB
+            - img [ref=f26e94]
+    - contentinfo [ref=e590]:
+      - generic [ref=e592]:
+        - paragraph [ref=e593]: © 2024 Digital Consulting. Všetky práva vyhradené.
+        - generic [ref=e594]:
+          - button "Ochrana osobných údajov" [ref=e595] [cursor=pointer]
+          - button "Obchodné podmienky" [ref=e596] [cursor=pointer]

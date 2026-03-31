@@ -50,7 +50,7 @@ const ArticleDetail = () => {
           <div className="bento-card relative rounded-2xl overflow-hidden border border-white/[0.06] p-8 md:p-12 mb-8 animate-fade-in">
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-40" />
             <div className="relative z-10">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary/70">
                 {article.title}
               </h1>
 
