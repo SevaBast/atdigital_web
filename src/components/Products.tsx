@@ -96,6 +96,8 @@ const Products = () => {
                       src={category.media.src}
                       alt={category.name}
                       className="w-full"
+                      width={1473}
+                      height={1034}
                       loading="lazy"
                     />
                   )}

@@ -13,14 +13,16 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
-      <Hero />
-      <PartnersBanner />
-      <CircuitBanner />
-      <Services />
-      <Products />
-      <References />
-      <LinkedInFeed />
-      <About />
+      <main>
+        <Hero />
+        <PartnersBanner />
+        <CircuitBanner />
+        <Services />
+        <Products />
+        <References />
+        <LinkedInFeed />
+        <About />
+      </main>
       <Footer />
     </div>
   );

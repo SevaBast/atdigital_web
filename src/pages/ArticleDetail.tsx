@@ -34,7 +34,7 @@ const ArticleDetail = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
 
-      <div className="container mx-auto px-4 pt-32 pb-24">
+      <main className="container mx-auto px-4 pt-32 pb-24">
         {/* Back Button */}
         <Button
           onClick={() => navigate("/academia")}
@@ -106,7 +106,7 @@ const ArticleDetail = () => {
             </div>
           </div>
         </article>
-      </div>
+      </main>
 
       <Footer />
     </div>

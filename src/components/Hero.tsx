@@ -166,7 +166,7 @@ const Hero = () => {
               {/* Image area */}
               <div className="p-3 pb-0">
                 <img
-                  src={`${import.meta.env.BASE_URL}picture/hala_card.png`}
+                  src={`${import.meta.env.BASE_URL}picture/hala_card.webp`}
                   alt="Smart Factory — digitálna tovareň"
                   className="block rounded-xl w-full"
                   width={600}

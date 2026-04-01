@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure Google Fonts (loaded by Elfsight widget) use font-display: swap */
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: local('Roboto');
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */

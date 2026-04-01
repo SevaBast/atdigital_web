@@ -145,6 +145,7 @@ const Academia = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
 
+      <main>
       <section className="py-24 pt-32 relative">
         <div
           ref={ref}
@@ -236,6 +237,7 @@ const Academia = () => {
           )}
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>
