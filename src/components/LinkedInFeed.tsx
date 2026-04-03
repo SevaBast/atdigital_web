@@ -3,7 +3,7 @@ import { useContent } from "@/context/LanguageContext";
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
 
-const ELFSIGHT_APP_ID = "aea6f93c-66cb-4add-8abd-fb27f53420de";
+const ELFSIGHT_APP_ID = "536ba5cb-202d-478f-bd83-af395377f75c";
 
 const LinkedInFeed = () => {
   const content = useContent();
