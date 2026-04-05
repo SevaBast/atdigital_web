@@ -70,17 +70,19 @@ const ArticleCard = ({ article, index, onClick }: ArticleCardProps) => {
 
         {/* Meta info */}
         <div className="flex items-center gap-4 pt-4 mt-5 text-xs text-muted-foreground border-t border-white/[0.06]">
-          <span className="inline-flex items-center gap-1.5">
-            <User className="h-3.5 w-3.5" />
-            {article.author}
+          <span className="inline-flex items-center gap-1.5 min-w-0">
+            <User className="h-3.5 w-3.5 shrink-0" />
+            <span className="truncate">{article.author}</span>
           </span>
-          <span className="inline-flex items-center gap-1.5">
-            <Calendar className="h-3.5 w-3.5" />
-            {new Date(article.date).toLocaleDateString("sk-SK")}
-          </span>
-          <span className="inline-flex items-center gap-1.5 ml-auto">
-            <Clock className="h-3.5 w-3.5" />
-            {article.readingTime} min
+          <span className="inline-flex items-center gap-3 shrink-0 ml-auto">
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-3.5 w-3.5" />
+              {new Date(article.date).toLocaleDateString("sk-SK")}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-3.5 w-3.5" />
+              {article.readingTime} min
+            </span>
           </span>
         </div>
 

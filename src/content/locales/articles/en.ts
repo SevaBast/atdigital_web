@@ -41,214 +41,79 @@ Integration of new technologies with legacy systems can be complex and costly. C
 Industry 4.0 is not just about technologies — it is a comprehensive transformation of manufacturing processes, business models and organizational culture. Companies that successfully implement these principles gain significant competitive advantages in the global market.`,
   },
   {
-    id: "lean-manufacturing",
-    title: "Lean Manufacturing in practice",
-    description: "Practical implementation of Lean methodologies in a manufacturing environment. Case studies and measurable results from real projects.",
-    author: "Ing. Jana Kováčová, PhD.",
-    date: "2024-01-20",
-    readingTime: 12,
-    tags: ["Lean", "Optimization", "Process excellence"],
-    pdfUrl: "https://drive.google.com/example1",
-    content: `## Introduction to Lean Manufacturing
+    id: "process-mining",
+    title: "New Approach to the Analysis of Manufacturing Processes with the Support of Data Science",
+    description: "The article introduces process mining as an innovative method for enterprise data analysis. It proposes and practically validates a proprietary methodology on real manufacturing data using Fluxicon Disco software.",
+    author: "Krajčovič, M., Bastiuchenko, V., Furmannová, B., Botka, M., Komačka, D.",
+    date: "2024-02-23",
+    readingTime: 7,
+    tags: ["Process Mining", "Data Science", "Manufacturing Processes", "Optimization"],
+    pdfUrl: "https://drive.google.com/file/d/1plTJ-KQHmIP5DnirVvnKN6y6fB0QpTdj/view",
+    content: `## Introduction to Process Mining
+Process mining is an innovative approach to enterprise data analysis that enables the systematic extraction, analysis, and visualization of digital traces within information systems. This technique establishes connections within data and forms complex process maps that serve as a foundation for the analysis, interpretation, and enhancement of internal business processes.
 
-Lean Manufacturing is a philosophy and set of tools focused on eliminating waste and maximizing customer value. This methodology originated in the Japanese automotive industry and today is used across various sectors worldwide.
+In today's environment, where the dynamics and competition in manufacturing are continually increasing, it is essential to apply advanced analytical methods before implementing any process changes. Traditional analytical methods may be limited in their ability to process large volumes of data and handle the complexity of modern manufacturing systems.
 
-## Core Lean principles
+## What is Process Mining
+Process mining is a new research area that combines information sciences with analytical statistical technologies. It merges statistics, computer science, and mathematical computations to determine relationships between key factors such as utilization, timing parameters, and others. The objective is the automatic construction of a process model based on recorded events from event logs available in information systems (ERP, MES).
 
-The five core Lean principles form the foundation of this philosophy. The first is defining value from the customer's perspective. The second is identifying the value stream — all steps required to create a product. The third principle is ensuring smooth value flow without interruptions and waiting.
+The fundamental input is an event log — a record of sequential transactions, events, or behaviors that occurred in a process. Each event log must contain at least three elements: Case ID (a unique process identifier), Activity (a step or action in the process), and Timestamp (indicating when the activity took place).
 
-The fourth principle is the pull system, where production begins only based on actual customer demand. The fifth principle is continuous improvement (kaizen) — continuously seeking ways to increase efficiency and quality.
+## Process Mining Algorithms
+The foundational algorithm is the α-miner (α-algorithm), which reconstructs causality from a set of event sequences. It transforms an event log into a workflow net (Petri net) based on the relationships between activities. These relationships include: Direct Succession, Causality, Parallel, and Choice.
 
-## Seven types of waste
+Beyond the α-algorithm, other algorithms exist: the heuristic miner (generates models based on frequency of occurrences), the fuzzy miner (a heuristic approach suitable for noisy data), and the Genetic Algorithm miner (GA miner). The key factors for process discovery are the balance between fitness, precision, generalization, and simplicity.
 
-Lean identifies seven main types of waste: overproduction, waiting, unnecessary transportation, excess inventory, unnecessary motion, defects and rework, and unrealized human potential. Eliminating these forms of waste leads to a significant increase in efficiency.
+## Proprietary Methodology for Manufacturing Process Analysis
+The authors proposed a 15-step methodology for analyzing manufacturing processes using process mining:
 
-## Tools and techniques
+1. Defining KPIs (work-in-progress, lead times, order lifecycle, rework, capacities)
 
-5S is the fundamental tool for workplace organization: Sort, Set in Order, Shine, Standardize and Sustain. Value Stream Mapping helps visualize the entire production process and identify improvement opportunities.
+2. Setting analysis goals and questions
 
-The Kanban system controls material and information flow. SMED (Single-Minute Exchange of Die) shortens equipment changeover times. TPM (Total Productive Maintenance) ensures maximum equipment availability.
+3. Selecting data sources (process logs, system records, sensor data, identifier data)
 
-## Case study
+4. Data extraction and cleaning (identification, extraction, cleaning, normalization)
 
-In one of our projects, we implemented Lean methodology in an automotive plant. The result was a 30% reduction in lead time, 25% inventory reduction and 40% productivity improvement. Product quality improved by 45% measured by defect count.
+5. Data transformation (attribute transformation, aggregation, time and identifier normalization)
 
-## Conclusion
+6. Decision block — verifying the format for import
 
-Lean Manufacturing is not a one-time project, but a cultural change requiring engagement of all employees. Success depends on management support and creating an environment that supports continuous improvement.`,
-  },
-  {
-    id: "predictive-maintenance",
-    title: "Predictive maintenance with AI",
-    description: "Using artificial intelligence and machine learning for predicting equipment failures. Technical implementation aspects and ROI analysis.",
-    author: "Ing. Martin Horváth",
-    date: "2024-02-01",
-    readingTime: 15,
-    tags: ["AI", "Maintenance", "IoT", "Analytics"],
-    pdfUrl: "https://drive.google.com/example2",
-    content: `## Introduction to predictive maintenance
+7. Linking specific attributes with data (Case ID, Activity, Timestamp)
 
-Predictive Maintenance uses advanced technologies to predict equipment failures before they occur. Unlike reactive maintenance (repair after failure) or preventive maintenance (scheduled maintenance), predictive maintenance optimizes the timing of maintenance interventions based on actual equipment condition.
+8. Data processing using software (algorithmic computations, process maps)
 
-## Technologies and sensors
+9. Decision block — verifying processing success
 
-Intelligent sensors collecting data about equipment condition form the basis of predictive maintenance. Vibration sensors monitor mechanical components, thermal cameras detect overheating, acoustic sensors identify unusual sounds and oil sensors analyze contamination.
+10. Process map analysis (time, source, and step filtering)
 
-IoT gateways ensure real-time data transfer to the cloud. Edge computing enables processing of critical data directly on the equipment for immediate response.
+11. Data validation (comparison with historical data, statistical verification, expert evaluation)
 
-## Machine Learning models
+12. Decision block — verifying match with the real model
 
-Artificial intelligence and machine learning analyze enormous amounts of sensor data. Anomaly detection algorithms identify deviations from normal behavior. Regression models predict Remaining Useful Life (RUL) of components.
+13. Statistical analysis (time series, regression analysis, variance evaluation)
 
-Classification models determine the type and severity of a problem. Deep learning networks can find complex relationships in data that traditional methods cannot capture.
+14. Detailed case analysis
 
-## Implementation process
+15. Defining improvements and interpreting results
 
-The first step is identifying critical equipment and possible failures. Next, we install the necessary sensors and data collection systems. Historical failure data is used to train machine learning models.
+## Case Study
+The methodology was validated on real data from a European manufacturing enterprise specializing in large welded steel structures. Data were extracted from the company's ERP system and contained information about machines, equipment, handling, preparation, and machining.
 
-A pilot project validates the effectiveness of the solution. After a successful pilot, gradual expansion to all equipment follows. Continuous model improvement accounts for new data and experiences.
+Raw data were transformed and imported into the Fluxicon Disco software. Key attributes were assigned: timestamp, article number, production order, machine ID, and operation numbers of the technological procedure. The output consisted of frequency and performance process maps.
 
-## ROI and benefits
+## Key Findings
+The analysis revealed critical orders and equipment: order A143503-1218326 (10 activities, total duration of 29 days and 5 hours) and order C402200-7155104 (11 activities, 25 days and 18 hours). Machines 999201 and 942101 accounted for more than 36% of the entire manufacturing process.
 
-Our projects have shown an average reduction of unplanned downtime by 30-50%. Maintenance costs decreased by 20-30% thanks to optimized intervention scheduling. Equipment lifespan was extended by 15-25%.
+Identified problems included long handling times, long processing and retooling times, and a long rework time on machine 942101 (31.5 days). Based on equipment segmentation, three groups were proposed for a cellular production arrangement aimed at shortening lead times.
 
-Typical ROI is 200-300% within 2-3 years. In addition to financial benefits, operational safety and operator satisfaction improve.
+## Achieved Results
+In the model example, a reduction in the time required for production cycles by 15% and an improvement in resource utilization by 20% were achieved. This resulted in increased process efficiency and a potential reduction in the required number of workers by up to 10%. By reducing the main identified problems (reducing WIP and shortening lead times), there is a potential to increase the efficiency of ongoing processes by at least 30%.
 
-## Challenges and recommendations
-
-Data quality is key — garbage in, garbage out. Integration with existing CMMS systems can be complex. Changing maintenance culture requires training and team engagement.
-
-We recommend starting with a pilot project on critical equipment, building a quality data foundation and gradually expanding the solution.`,
-  },
-  {
-    id: "digital-twin-guide",
-    title: "Digital Twin — Complete guide",
-    description: "Detailed guide for creating a digital twin of manufacturing processes. From concept through implementation to practical use.",
-    author: "Ing. Peter Novák",
-    date: "2024-02-10",
-    readingTime: 20,
-    tags: ["Digital Twin", "Simulation", "Industry 4.0"],
-    pdfUrl: null,
-    content: `## What is a Digital Twin?
-
-A Digital Twin is a virtual replica of a physical object, process or system that is updated in real time using data from sensors and other sources. It enables simulation, analysis and optimization of physical object behavior in a digital environment.
-
-## Types of Digital Twins
-
-A Component Digital Twin represents an individual component or device. An Asset Digital Twin displays a complete production machine or system. A System Digital Twin encompasses entire production lines and their interactions.
-
-A Process Digital Twin models entire production processes and material flows. An Enterprise Digital Twin integrates all systems at the enterprise level.
-
-## Technology architecture
-
-The physical layer contains real devices with IoT sensors collecting data on temperature, vibration, pressure and other parameters. The communication layer ensures data transfer through IoT gateways and edge devices to the cloud.
-
-The data layer stores historical and real-time data. The modeling layer contains 3D models, physics simulations and machine learning models. The application layer provides visualization, analytics and decision support.
-
-## Implementation process
-
-Defining goals and scope is the first step. We determine what we want to model and what the expected benefit should be. Requirements gathering includes technical specifications and expected outputs.
-
-3D modeling creates the digital representation. Sensor and data integration connects the physical world with the digital one. Calibration and validation ensure model accuracy.
-
-Developing analytical functions adds intelligence to the system. Deployment and user training ensure successful adoption of the solution in practice.
-
-## Practical applications
-
-Process optimization uses simulations to test changes before implementation. Predictive maintenance predicts failures based on current equipment status.
-
-Production planning optimizes schedules based on real capacity. Training simulators enable operator training in a safe environment. Virtual commissioning shortens time and costs for launching new lines.
-
-## Benefits and ROI
-
-Our Digital Twin projects have delivered production error reduction of 20-35%, commissioning time reduction of 30-50% and maintenance cost savings of 15-25%. OEE increase is 10-20%.
-
-## Future of Digital Twin
-
-Integration with AI and machine learning will enable autonomous optimization. Augmented reality (AR) will bring new visualization possibilities. Blockchain will ensure data trustworthiness. 5G networks will enable ultra-low latency.`,
-  },
-  {
-    id: "robotics-automation",
-    title: "Robotics and automation",
-    description: "Trends in industrial robotics and collaborative robots. Choosing the right automation for your process.",
-    author: "Ing. Lucia Szabová",
-    date: "2024-02-15",
-    readingTime: 10,
-    tags: ["Robotics", "Automation", "Cobots"],
-    pdfUrl: null,
-    content: `## Evolution of industrial robotics
-
-Industrial robots have come a long way from the first simple manipulators to today's intelligent systems. Modern robots are more flexible, precise and easier to program than ever before.
-
-## Traditional industrial robots
-
-Classic industrial robots excel in high speed, precision and repeatability. They are ideal for heavy loads and harsh environments. They are used primarily for welding, assembly, palletizing and painting.
-
-The disadvantages include the need for safety enclosures, high initial investment and more complex programming. They are less flexible when changing the production program.
-
-## Collaborative robots (Cobots)
-
-Cobots represent a new generation of robots designed for safe human collaboration. They have built-in safety sensors, are simpler to program and faster to deploy.
-
-They are used for pick-and-place operations, quality control, machine tending and assembly operations. Advantages include lower initial investment, easy reconfiguration and safe collaboration with operators.
-
-## How to choose the right solution
-
-Process analysis is the first step. We need to understand requirements for cycle time, precision, payload and flexibility. ROI calculation must include not only the robot price, but also integration, training and maintenance.
-
-A pilot project validates the suitability of the solution before full deployment. It is important to consider future needs and expansion possibilities.
-
-## Trends in robotics
-
-Artificial intelligence enables robots to learn from data and adapt to changes. Computer vision systems provide robots with sight for more complex tasks. 5G connectivity enables remote control and monitoring.
-
-Mobile robots (AMR, AGV) are transforming in-plant logistics. Digital Twin technologies enable virtual programming and optimization.
+## Limitations of the Method
+Process mining also has its limitations: dependency on the quality of input data, time-consuming processing of large data volumes, complexity of result interpretation, limited predictive capacity, and the necessity of selecting the correct time period for analysis. For some organizations, alternative methods such as Six Sigma or Lean may be more suitable.
 
 ## Conclusion
-
-Automation with robots is no longer just for large companies. Modern solutions are more affordable and flexible than ever before. The key to success is choosing the right technology and professional implementation.`,
-  },
-  {
-    id: "energy-efficiency",
-    title: "Energy efficiency in manufacturing",
-    description: "Strategies and technologies for reducing the energy intensity of manufacturing processes. ESG compliance and sustainability.",
-    author: "Ing. Jana Kováčová, PhD.",
-    date: "2024-02-20",
-    readingTime: 9,
-    tags: ["Energy", "Optimization", "ESG"],
-    pdfUrl: "https://drive.google.com/example3",
-    content: `## The importance of energy efficiency
-
-Energy costs represent a significant portion of manufacturing costs. At the same time, pressure is increasing to reduce the carbon footprint in accordance with ESG criteria and climate commitments. Energy efficiency is therefore a strategic priority for modern manufacturing enterprises.
-
-## Audit and monitoring
-
-The first step is a comprehensive energy audit identifying the main consumers and savings opportunities. Smart metering systems provide real-time monitoring of energy consumption at the individual equipment level.
-
-Energy management systems (EMS) analyze data and identify anomalies and optimization opportunities. ISO 50001 certification provides a framework for systematic energy management.
-
-## Technologies and solutions
-
-Variable frequency drives optimize electric motor consumption according to actual needs. LED lighting reduces consumption by 50-70% compared to traditional lighting. Waste heat recovery utilizes heat from manufacturing processes.
-
-Compressed air optimization eliminates leaks and reduces pressure to the required level. Smart HVAC systems intelligently control heating and air conditioning.
-
-## Renewable sources
-
-Solar panels on manufacturing hall roofs generate own electricity. Heat pumps use renewable heat sources. Battery storage optimizes consumption and provides backup.
-
-## Case studies
-
-In one project, we achieved a 25% reduction in electricity consumption by implementing variable frequency drives and compressed air optimization. ROI was achieved in 2.5 years.
-
-In another project, a combination of solar panels, LED lighting and heat recovery reduced energy costs by 35% and the carbon footprint by 40%.
-
-## ESG and reporting
-
-Energy efficiency is a key pillar of ESG strategy. Carbon footprint reporting is becoming mandatory for larger companies. Green certificates improve reputation and open new business opportunities.
-
-## Conclusion
-
-Investments in energy efficiency have a short payback period and long-term benefits. A combination of technologies, process changes and proper management leads to 20-40% energy cost savings.`,
-  },
+Process mining provides significant advantages in the analysis and optimization of manufacturing processes. It enables the discovery of hidden patterns and variability, identification of inefficient steps, increased process transparency, and support for data-driven decision-making. Collaboration between academia and industry is key to the successful application of these methods.`,
+}
 ];
