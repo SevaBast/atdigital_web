@@ -20,7 +20,8 @@ const Navigation = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const isHome = location.pathname === "/" || location.pathname === "/atdigital_web/";
+    const basePath = import.meta.env.BASE_URL.replace(/\/+$/, '');
+    const isHome = location.pathname === "/" || location.pathname === basePath || location.pathname === basePath + "/";
 
     if (!isHome) {
       setActiveSection(location.pathname);
@@ -81,7 +82,8 @@ const Navigation = () => {
       }
     };
 
-    if (location.pathname === "/" || location.pathname === "/atdigital_web/") {
+    const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+    if (location.pathname === "/" || location.pathname === base || location.pathname === base + "/") {
       scrollToEl(href);
     } else {
       navigate("/");
@@ -105,7 +107,7 @@ const Navigation = () => {
             to="/"
             onClick={(e) => {
               e.preventDefault();
-              if (location.pathname === "/" || location.pathname === "/atdigital_web/") {
+              if (location.pathname === "/" || location.pathname === import.meta.env.BASE_URL.replace(/\/+$/, '') || location.pathname === import.meta.env.BASE_URL.replace(/\/+$/, '') + "/") {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               } else {
                 navigate("/");

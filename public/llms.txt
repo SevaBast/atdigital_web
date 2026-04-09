@@ -11,7 +11,7 @@ AT Digital (ATDigital s.r.o.) je slovenská konzultačná spoločnosť so sídlo
 - **IČO:** 55742203
 - **DIČ:** 2122072381
 - **Sídlo:** Rosinská cesta 9, 010 08 Žilina, Slovensko
-- **Webová stránka:** https://sevabast.github.io/atdigital_web/
+- **Webová stránka:** https://www.atdigital.sk/
 - **Jazyky:** slovenčina, angličtina
 
 ## Služby

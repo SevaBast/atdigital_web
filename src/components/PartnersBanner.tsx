@@ -21,6 +21,8 @@ const PartnersBanner = () => {
     src: `${import.meta.env.BASE_URL}${logo.image.startsWith('/') ? logo.image.slice(1) : logo.image}`,
     alt: logo.name,
     title: logo.name,
+    width: 120,
+    height: partnersConfig.logoLoop.logoHeight,
   }));
 
   // Split logos by index: even → row 1, odd → row 2 (auto-alternates when adding new logos)

@@ -146,11 +146,19 @@ export default {
         },
         "heroIn": {
           "0%": {
-            opacity: "0",
+            opacity: "0.01",
             transform: "translateY(24px)"
           },
           "100%": {
             opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "heroSlideUp": {
+          "0%": {
+            transform: "translateY(24px)"
+          },
+          "100%": {
             transform: "translateY(0)"
           }
         },

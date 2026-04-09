@@ -35,15 +35,17 @@ const ArticleDetail = () => {
       <Navigation />
 
       <main className="container mx-auto px-4 pt-32 pb-24">
-        {/* Back Button */}
-        <Button
-          onClick={() => navigate("/academia")}
-          variant="outline"
-          className="mb-8 border-primary/10 hover:border-primary/25 hover:bg-primary/5"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Späť na Akadémiu
-        </Button>
+        {/* Back Button — zarovnaný s ľavým okrajom karty článku */}
+        <div className="max-w-4xl mx-auto">
+          <Button
+            onClick={() => navigate("/academia")}
+            variant="outline"
+            className="mb-8 border-primary/10 hover:border-primary/25 hover:bg-primary/5"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Späť na Akadémiu
+          </Button>
+        </div>
 
         {/* Article Header */}
         <article className="max-w-4xl mx-auto">

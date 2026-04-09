@@ -57,13 +57,14 @@ const Hero = () => {
           {/* Left: Logo + text + CTA */}
           <div className="space-y-8 order-1" style={{ textAlign: heroLayout.logo.align }}>
             {/* Logo — posun: heroLayout.logo */}
-            <div className="space-y-4 opacity-0 translate-y-6 animate-[heroIn_0.7s_ease-out_forwards]" style={{ animationDelay: "0ms" }}>
+            <div className="space-y-4 animate-[heroSlideUp_0.7s_ease-out_forwards]" style={{ animationDelay: "0ms" }}>
               <img
                 src={`${import.meta.env.BASE_URL}atd_logo.png`}
                 alt="AT Digital Logo"
                 className="w-full max-w-xl h-auto"
                 width={576}
                 height={120}
+                fetchPriority="high"
                 style={{
                   position: "relative",
                   top: heroLayout.logo.top,
@@ -108,6 +109,32 @@ const Hero = () => {
               {content.hero.description}
             </p>
 
+            {/* ATPark membership */}
+            <p
+              {...heroFadeIn(400)}
+              className="text-base md:text-lg text-foreground/60 max-w-xl opacity-0 translate-y-6 animate-[heroIn_0.7s_ease-out_forwards]"
+              style={{
+                position: "relative",
+                top: heroLayout.description.top,
+                left: heroLayout.description.left,
+                textAlign: heroLayout.description.align,
+                marginLeft: heroLayout.description.align === "center" ? "auto" : undefined,
+                marginRight: heroLayout.description.align === "center" ? "auto" : heroLayout.description.align === "left" ? "auto" : undefined,
+                textShadow:
+                  "0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.7)",
+              }}
+            >
+              {content.hero.atparkText}{" "}
+              <a
+                href="https://www.atpark.eu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 underline decoration-primary/30 underline-offset-4 hover:decoration-primary/60"
+              >
+                {content.hero.atparkLink}
+              </a>
+            </p>
+
             {/* CTA Buttons — posun: heroLayout.buttons */}
             <div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 opacity-0 translate-y-6 animate-[heroIn_0.7s_ease-out_forwards]"
@@ -145,13 +172,13 @@ const Hero = () => {
           <div
             className="hidden lg:flex justify-end order-2 origin-center opacity-0 translate-y-6 animate-[heroIn_0.8s_ease-out_forwards]"
             style={{
-              transform: `scale(${heroLayout.tiltCard.scale})`,
               position: "relative",
               top: heroLayout.tiltCard.top,
               left: heroLayout.tiltCard.left,
               animationDelay: "600ms",
             }}
           >
+           <div style={{ transform: `scale(${heroLayout.tiltCard.scale})`, transformOrigin: "center", width: "100%", display: "flex", justifyContent: "flex-end" }}>
             <TiltCard
               className="rounded-2xl overflow-hidden border border-white/[0.12] shadow-2xl shadow-black/30"
               style={{
@@ -196,6 +223,7 @@ const Hero = () => {
               {/* Bottom accent line */}
               <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-10" />
             </TiltCard>
+           </div>
           </div>
         </div>
       </div>

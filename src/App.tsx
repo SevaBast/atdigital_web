@@ -30,7 +30,7 @@ const App = () => {
   <LanguageProvider>
     <TooltipProvider>
       <Sonner />
-      <BrowserRouter basename="/atdigital_web" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/+$/, '')} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <PageTransition>
           <Suspense fallback={<div className="min-h-screen bg-background" />}>
             <Routes>

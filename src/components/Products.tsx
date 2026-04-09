@@ -51,7 +51,7 @@ const Products = () => {
                       {category.name}
                     </h3>
                     <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">{category.description}</p>
-                    <ul className="space-y-3">
+                    <ul className="flex flex-col gap-3 pt-4 border-t border-white/[0.06]">
                       {category.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <Zap className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
@@ -62,7 +62,8 @@ const Products = () => {
                   </div>
                 </div>
 
-                {/* Bottom – media (image, video or YouTube) */}
+                {/* Bottom – media (image, video or YouTube) — voliteľné */}
+                {category.media && (
                 <div
                   className="bento-card relative rounded-2xl overflow-hidden border border-white/[0.06] opacity-0 animate-bento-in"
                   style={{ animationDelay: "100ms", animationFillMode: "both" }}
@@ -102,6 +103,7 @@ const Products = () => {
                     />
                   )}
                 </div>
+                )}
               </div>
             </TabsContent>
           ))}

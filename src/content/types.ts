@@ -16,6 +16,8 @@ export interface HeroContent {
   title: string;
   subtitle: string;
   description: string;
+  atparkText: string;
+  atparkLink: string;
   buttons: {
     services: string;
     academia: string;
@@ -58,7 +60,7 @@ export interface ProductCategory {
   icon: string;
   description: string;
   features: string[];
-  media: { type: "image" | "video" | "youtube"; src: string };
+  media?: { type: "image" | "video" | "youtube"; src: string };
 }
 
 export interface ProductsContent {
@@ -152,6 +154,11 @@ export interface AcademiaContent {
 
 export interface FooterContent {
   copyright: string;
+  createdBy: {
+    text: string;
+    name: string;
+    url: string;
+  };
   links: {
     privacy: string;
     terms: string;

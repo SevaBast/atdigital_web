@@ -37,7 +37,7 @@ const ProjectCard = ({ project, index }: { project: ReferenceProject; index: num
           {project.description}
         </p>
         {project.highlights.length > 0 && (
-          <ul className="space-y-2.5 mt-auto">
+          <ul className="flex flex-col gap-2.5 pt-4 border-t border-white/[0.06]">
             {project.highlights.map((h, i) => (
               <li key={i} className="flex items-start gap-3">
                 <Zap className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />

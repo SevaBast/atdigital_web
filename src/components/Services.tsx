@@ -48,8 +48,8 @@ const BentoCard = ({ title, icon, description, benefits, index, colSpan }: Bento
         "transition-all duration-500 ease-out",
         "hover:border-primary/25 hover:-translate-y-1",
         "opacity-0 animate-bento-in",
-        colSpan === 2 && "md:col-span-2",
-        colSpan === 3 && "md:col-span-3",
+        colSpan === 2 && "sm:col-span-2",
+        colSpan === 3 && "sm:col-span-2 lg:col-span-3",
       )}
       style={{
         animationDelay: `${index * 80}ms`,

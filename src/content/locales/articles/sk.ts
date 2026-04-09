@@ -6,41 +6,6 @@ import type { Article } from "@/content/types";
 
 export const skArticles: Article[] = [
   {
-    id: "industry-40-basics",
-    title: "Úvod do Industry 4.0",
-    description: "Základné princípy štvrtej priemyselnej revolúcie a jej dopad na modernú výrobu. Prehľad kľúčových technológií a prínosy digitalizácie.",
-    author: "Ing. Peter Novák",
-    date: "2024-01-15",
-    readingTime: 8,
-    tags: ["Industry 4.0", "Digitalizácia", "IoT"],
-    pdfUrl: null,
-    content: `## Úvod
-
-Industry 4.0 predstavuje štvrtú priemyselnú revolúciu, ktorá transformuje spôsob, akým vyrábame produkty a poskytujeme služby. Tento koncept vznikol v Nemecku a rýchlo sa rozšíril po celom svete, pretože prináša bezprecedentné možnosti pre zvýšenie efektivity, flexibility a konkurencieschopnosti výrobných podnikov.
-
-## Kľúčové technológie
-
-Industry 4.0 stojí na niekoľkých pilieroch moderných technológií. Internet vecí (IoT) umožňuje prepojenie všetkých zariadení a systémov v reálnom čase. Big Data a pokročilá analytika poskytujú cenné poznatky z obrovského množstva dát generovaných výrobnými procesmi.
-
-Cloud computing zabezpečuje flexibilné a škálovateľné výpočtové zdroje, zatiaľ čo kyberneticko-fyzikálne systémy (CPS) vytvárajú most medzi fyzickým a digitálnym svetom. Umelá inteligencia a strojové učenie umožňujú automatizáciu komplexných rozhodovacích procesov a predikciu budúcich udalostí.
-
-## Prínosy digitalizácie
-
-Implementácia Industry 4.0 prináša významné výhody. Zvyšuje produktivitu a efektivitu výroby, znižuje náklady a minimalizuje plytvania. Umožňuje flexibilnejšiu výrobu a rýchlejšiu reakciu na zmeny v dopyte. Zlepšuje kvalitu produktov a zvyšuje spokojnosť zákazníkov.
-
-Dôležitým prínosom je aj prediktívna údržba, ktorá výrazne znižuje neplánované prestoje výroby. Digitalizácia tiež otvára nové obchodné modely a príležitosti pre inovácie.
-
-## Výzvy implementácie
-
-Prechod na Industry 4.0 však prináša aj výzvy. Vyžaduje značné investície do technológií a infraštruktúry. Firmy musia čeliť nedostatku kvalifikovaných pracovníkov s potrebnými digitálnymi kompetenciami. Kybernetická bezpečnosť sa stává kritickou otázkou v prepojenom prostredí.
-
-Integrácia nových technológií so staršími systémami môže byť komplexná a nákladná. Zmena organizačnej kultúry a postupov vyžaduje čas a trpezlivosť.
-
-## Záver
-
-Industry 4.0 nie je len o technológiách – je to komplexná transformácia výrobných procesov, obchodných modelov a organizačnej kultúry. Podniky, ktoré úspešne implementujú tieto princípy, získavajú významné konkurenčné výhody v globálnom trhu.`,
-  },
-  {
     id: "process-mining",
     title: "Nový prístup k analýze výrobných procesov s podporou Data Science",
     description: "Článok predstavuje process mining ako inovatívnu metódu analýzy podnikových dát. Navrhuje a prakticky overuje vlastnú metodiku na reálnych výrobných dátach s využitím softvéru Fluxicon Disco.",

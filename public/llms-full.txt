@@ -114,7 +114,7 @@ AT Digital publishes expert articles on:
 - **DIC (Tax ID):** 2122072381
 - **Address:** Rosinská cesta 9, 010 08 Žilina, Slovakia
 - **GPS Coordinates:** 49.1987816°N, 18.7698794°E
-- **Website:** https://sevabast.github.io/atdigital_web/
+- **Website:** https://www.atdigital.sk/
 - **Languages:** Slovak, English
 
 ## Partners & Clients

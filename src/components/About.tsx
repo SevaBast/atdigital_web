@@ -50,7 +50,7 @@ const About = () => {
 
     setSending(true);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/liyoko8214@onbap.com", {
+      const res = await fetch("https://formsubmit.co/ajax/atdigital.sk@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
